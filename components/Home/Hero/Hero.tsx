@@ -13,7 +13,7 @@ const Hero = () => {
           </h1>
           <p className='text-sm sm:text-base font-medium md:text-shadow-lg text-gray-200 '>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, vitae. Lorem ipsum dolor sit amet.</p>
          <button className='mt-6 px-5 py-3 bg-amber-300 font-semibold hover:bg-black hover:text-white  rounded-lg transition-all duration-500'>
-          Descover More
+           More
          </button>
       </div>
 
