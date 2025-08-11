@@ -35,22 +35,22 @@ const Nav = ({openNav}:Props) => {
 
 
   return (
-    <div className={`transition-all ${navBg ?  "bg-black/100" : "bg-white"} duration-1000 h-[11vh] z-[100] fixed w-full`}>
+    <div className={`transition-all ${navBg ?  "bg-black/100" : "backdrop-blur-sm"} duration-1000 h-[11vh] z-[100] fixed w-full`}>
        <div className=' flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto'>
             <div className='flex items-center space-x-2'>
               <div className=''>
                <Image src="/Images/cropped_circle_image (1).png" alt='' width={55} height={55} className='rounded-full bg-cover'/>
               </div>
-              <h1 className={`text-2xl ${navBg ?  "text-white" : ""} sm:block text-black font-bold`}
+              <h1 className={`text-2xl ${navBg ?  "text-white" : ""} sm:block text-white font-bold`}
               >MostaSoft
               </h1>
 
             </div>
 
             {/* NavLinks */}
-            <div className="hidden lg:flex items-center space-x-2">
+            <div className="hidden lg:flex items-center  space-x-2">
               {NavLinks.map((link)=>{ 
-                return <Link href={link.urL} key={link.id} className={`${navBg ?  "text-white" : ""}  text-black text-lg  hover:bg-black hover:text-white hover:rounded-[5px] px-3 font-bold transition-all duration-200`} >
+                return <Link href={link.urL} key={link.id} className={`${navBg ?  "text-white" : "text-white"}  text-black text-lg  hover:bg-black hover:text-white hover:rounded-[5px] px-3 font-bold transition-all duration-200`} >
                     {
                       <p>{link.Label}</p>
                     }
