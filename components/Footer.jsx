@@ -7,7 +7,7 @@ import { FaSquareFacebook, FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-8 items-center justify-center bg-gray-200 mt-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-8 items-center justify-center bg-gray-200 ">
       <div className=" space-y-9">
         <Link href="#">
           <div className="flex hover:translate-x-2 transition duration-300 hover:text-red-500 items-center  gap-2 font-bold text-sm md:text-2xl lg:text-2xl xl:text-2xl">
