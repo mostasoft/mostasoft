@@ -40,7 +40,7 @@ export default function Hero() {
           <div className=" grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 w-full h-full">
             <div className="w-full  justify-center text-black  h-full ">
               <div className=" space-y-5">
-                <h1 className="text-xl md:text-2xl lg:text-4xl font-bold">Fuel An Idea With The Technology & Build A Fire</h1>
+                <h1 className="text-xl md:text-2xl lg:mt-10 lg:text-4xl font-bold">Fuel An Idea With The Technology & Build A Fire</h1>
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Debitis repudiandae vitae eos, rerum officia quo.
@@ -63,7 +63,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="w-full flex items-center justify-center h-full">
-              <Image width={500} className="w-[200px] bg-cover" height={500} alt="Hero" src="/Hero.png" />
+              <Image width={500} className="w-[200px]  md:w-[400px] xl:w-[600px] lg:w-[500px]  bg-cover" height={500} alt="Hero" src="/Hero.png" />
             </div>
           </div>
         </SwiperSlide>
@@ -71,7 +71,7 @@ export default function Hero() {
           <div className=" grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 w-full h-full">
             <div className="w-full  justify-center text-black  h-full ">
               <div className=" space-y-5">
-                <h1 className="text-xl md:text-2xl lg:text-4xl font-bold">Fuel An Idea With The Technology & Build A Fire</h1>
+                <h1 className="text-xl md:text-2xl lg:text-4xl  lg:mt-10 font-bold">Fuel An Idea With The Technology & Build A Fire</h1>
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Debitis repudiandae vitae eos, rerum officia quo.
@@ -94,7 +94,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="w-full flex items-center justify-center h-full">
-              <Image width={500} className="w-[200px] bg-cover" height={500} alt="Hero" src="/Hero.png" />
+              <Image width={500} className="w-[200px]  md:w-[400px] xl:w-[600px] lg:w-[500px]  bg-cover" height={500} alt="Hero" src="/Hero.png" />
             </div>
           </div>
         </SwiperSlide>
@@ -102,7 +102,7 @@ export default function Hero() {
           <div className=" grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 w-full h-full">
             <div className="w-full  justify-center text-black  h-full ">
               <div className=" space-y-5">
-                <h1 className="text-xl md:text-2xl lg:text-4xl font-bold">Fuel An Idea With The Technology & Build A Fire</h1>
+                <h1 className="text-xl md:text-2xl lg:mt-10 lg:text-4xl font-bold">Fuel An Idea With The Technology & Build A Fire</h1>
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Debitis repudiandae vitae eos, rerum officia quo.
@@ -125,7 +125,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="w-full flex items-center justify-center h-full">
-              <Image width={500} className="w-[200px] bg-cover" height={500} alt="Hero" src="/Hero.png" />
+              <Image width={500} className="w-[200px] md:w-[400px] xl:w-[600px] lg:w-[500px]  bg-cover" height={500} alt="Hero" src="/Hero.png" />
             </div>
           </div>
         </SwiperSlide>
