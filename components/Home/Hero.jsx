@@ -67,6 +67,68 @@ export default function Hero() {
             </div>
           </div>
         </SwiperSlide>
+        <SwiperSlide className="flex justify-center p-8 bg-gray-100 items-center h-full w-full">
+          <div className=" grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 w-full h-full">
+            <div className="w-full  justify-center text-black  h-full ">
+              <div className=" space-y-5">
+                <h1 className="text-xl md:text-2xl lg:text-4xl font-bold">Fuel An Idea With The Technology & Build A Fire</h1>
+                <div>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Debitis repudiandae vitae eos, rerum officia quo.
+                </div>
+                <div className="flex justify-center  gap-4 mt-15">
+                  <Link
+                    href="#"
+                    className=" text-sm md:text-xl  lg:text-xl xl:text-2
+                     rounded-xl btn-glass hover:text-red-500 font-bold hover:bg-neutral-300 hover:translate-x-2 transition"
+                  >
+                    Explore More
+                  </Link>
+                  <Link
+                    href="#"
+                    className=" text-sm md:text-xl lg:text-xl xl:text-2 btn-glass rounded-xl font-bold hover:bg-neutral-300 hover:text-red-500 hover:translate-x-2 transition duration-200"
+                  >
+                    Book A Free Consultation
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="w-full flex items-center justify-center h-full">
+              <Image width={500} className="w-[200px] bg-cover" height={500} alt="Hero" src="/Hero.png" />
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="flex justify-center p-8 bg-gray-100 items-center h-full w-full">
+          <div className=" grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 w-full h-full">
+            <div className="w-full  justify-center text-black  h-full ">
+              <div className=" space-y-5">
+                <h1 className="text-xl md:text-2xl lg:text-4xl font-bold">Fuel An Idea With The Technology & Build A Fire</h1>
+                <div>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Debitis repudiandae vitae eos, rerum officia quo.
+                </div>
+                <div className="flex justify-center  gap-4 mt-15">
+                  <Link
+                    href="#"
+                    className=" text-sm md:text-xl  lg:text-xl xl:text-2
+                     rounded-xl btn-glass hover:text-red-500 font-bold hover:bg-neutral-300 hover:translate-x-2 transition"
+                  >
+                    Explore More
+                  </Link>
+                  <Link
+                    href="#"
+                    className=" text-sm md:text-xl lg:text-xl xl:text-2 btn-glass rounded-xl font-bold hover:bg-neutral-300 hover:text-red-500 hover:translate-x-2 transition duration-200"
+                  >
+                    Book A Free Consultation
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="w-full flex items-center justify-center h-full">
+              <Image width={500} className="w-[200px] bg-cover" height={500} alt="Hero" src="/Hero.png" />
+            </div>
+          </div>
+        </SwiperSlide>
 
         {/* Autoplay progress circle */}
         <div className="autoplay-progress" slot="container-end">
