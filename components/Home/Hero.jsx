@@ -62,7 +62,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="w-full flex items-center justify-center h-full">
-              <Image width={500} className="w-[300px] bg-cover" height={500} alt="Hero" src="/Hero.png" />
+              <Image width={500} className="w-[200px] bg-cover" height={500} alt="Hero" src="/Hero.png" />
             </div>
           </div>
         </SwiperSlide>
