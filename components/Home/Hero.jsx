@@ -48,13 +48,14 @@ export default function Hero() {
                 <div className="flex justify-center  gap-4 mt-15">
                   <Link
                     href="#"
-                    className=" rounded-xl btn-glass hover:text-red-500 font-bold hover:bg-neutral-300 hover:translate-x-2 transition"
+                    className=" text-sm md:text-xl  lg:text-xl xl:text-2
+                     rounded-xl btn-glass hover:text-red-500 font-bold hover:bg-neutral-300 hover:translate-x-2 transition"
                   >
                     Explore More
                   </Link>
                   <Link
                     href="#"
-                    className=" btn-glass rounded-xl font-bold hover:bg-neutral-300 hover:text-red-500 hover:translate-x-2 transition duration-200"
+                    className=" text-sm md:text-xl lg:text-xl xl:text-2 btn-glass rounded-xl font-bold hover:bg-neutral-300 hover:text-red-500 hover:translate-x-2 transition duration-200"
                   >
                     Book A Free Consultation
                   </Link>
