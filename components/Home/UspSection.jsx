@@ -63,7 +63,7 @@ const UspSection = () => {
               happy—because your vision deserves to be perfected without
               compromise.
             </div>
-            <button className="btn-glass hover:translate-x-2 text-red-500">Start Now</button>
+            <button className="btn-glass hover:translate-x-2 text-red-500 ">Start Now</button>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Link from "next/link";
+import HeroImag from "next/image";
 import Image from "next/image";
 
 export default function Hero() {
@@ -23,7 +24,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="h-[60vh] relative">
+    <div className="h-[70vh]">
       <Swiper
         className="h-full w-full"
         speed={1000}
@@ -35,102 +36,106 @@ export default function Hero() {
         modules={[Autoplay, Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
       >
-        {/* Slide 1 */}
-        <SwiperSlide className="flex justify-center p-8 bg-gray-100 items-center h-full w-full">
-          <div className=" grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 w-full h-full">
-            <div className="w-full  justify-center text-black  h-full ">
-              <div className=" space-y-5">
-                <h1 className="text-xl md:text-2xl lg:mt-10 lg:text-4xl font-bold">Fuel An Idea With The Technology & Build A Fire</h1>
-                <div>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Debitis repudiandae vitae eos, rerum officia quo.
-                </div>
-                <div className="flex justify-center  gap-4 mt-15">
-                  <Link
-                    href="#"
-                    className=" text-sm md:text-xl  lg:text-xl xl:text-2
-                     rounded-xl btn-glass hover:text-red-500 font-bold hover:bg-neutral-300 hover:translate-x-2 transition"
-                  >
-                    Explore More
-                  </Link>
-                  <Link
-                    href="#"
-                    className=" text-sm md:text-xl lg:text-xl xl:text-2 btn-glass rounded-xl font-bold hover:bg-neutral-300 hover:text-red-500 hover:translate-x-2 transition duration-200"
-                  >
-                    Book A Free Consultation
-                  </Link>
-                </div>
+        <SwiperSlide className="">
+          <div>
+            <section className="w-full bg-white px-6 md:px-12 lg:px-20 py-12">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+              {/* Left: Text */}
+              <div className="flex-1 text-center md:text-left">
+                <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                  Build Your Website with Confidence
+                </h1>
+                <p className="text-gray-600 mb-8 text-lg">
+                  We provide modern web development, digital marketing, and
+                  excellent support to help your business grow online.
+                </p>
+                <button className="px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">
+                  Get Started
+                </button>
+              </div>
+
+              {/* Right: Image */}
+              <div className="flex-1">
+                <Image
+                  src="/Hero.png"
+                  alt="Team working illustration"
+                  width={930}
+                  height={768}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
               </div>
             </div>
-            <div className="w-full flex items-center justify-center h-full">
-              <Image width={500} className="w-[200px]  md:w-[400px] xl:w-[600px] lg:w-[500px]  bg-cover" height={500} alt="Hero" src="/Hero.png" />
-            </div>
+          </section>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="flex justify-center p-8 bg-gray-100 items-center h-full w-full">
-          <div className=" grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 w-full h-full">
-            <div className="w-full  justify-center text-black  h-full ">
-              <div className=" space-y-5">
-                <h1 className="text-xl md:text-2xl lg:text-4xl  lg:mt-10 font-bold">Fuel An Idea With The Technology & Build A Fire</h1>
-                <div>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Debitis repudiandae vitae eos, rerum officia quo.
-                </div>
-                <div className="flex justify-center  gap-4 mt-15">
-                  <Link
-                    href="#"
-                    className=" text-sm md:text-xl  lg:text-xl xl:text-2
-                     rounded-xl btn-glass hover:text-red-500 font-bold hover:bg-neutral-300 hover:translate-x-2 transition"
-                  >
-                    Explore More
-                  </Link>
-                  <Link
-                    href="#"
-                    className=" text-sm md:text-xl lg:text-xl xl:text-2 btn-glass rounded-xl font-bold hover:bg-neutral-300 hover:text-red-500 hover:translate-x-2 transition duration-200"
-                  >
-                    Book A Free Consultation
-                  </Link>
-                </div>
+        <SwiperSlide className="">
+          <div>
+            <section className="w-full bg-white px-6 md:px-12 lg:px-20 py-12">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+              {/* Left: Text */}
+              <div className="flex-1 text-center md:text-left">
+                <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                  Build Your Website with Confidence
+                </h1>
+                <p className="text-gray-600 mb-8 text-lg">
+                  We provide modern web development, digital marketing, and
+                  excellent support to help your business grow online.
+                </p>
+                <button className="px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">
+                  Get Started
+                </button>
+              </div>
+
+              {/* Right: Image */}
+              <div className="flex-1">
+                <Image
+                  src="/Hero.png"
+                  alt="Team working illustration"
+                  width={930}
+                  height={768}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
               </div>
             </div>
-            <div className="w-full flex items-center justify-center h-full">
-              <Image width={500} className="w-[200px]  md:w-[400px] xl:w-[600px] lg:w-[500px]  bg-cover" height={500} alt="Hero" src="/Hero.png" />
-            </div>
+          </section>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="flex justify-center p-8 bg-gray-100 items-center h-full w-full">
-          <div className=" grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 w-full h-full">
-            <div className="w-full  justify-center text-black  h-full ">
-              <div className=" space-y-5">
-                <h1 className="text-xl md:text-2xl lg:mt-10 lg:text-4xl font-bold">Fuel An Idea With The Technology & Build A Fire</h1>
-                <div>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Debitis repudiandae vitae eos, rerum officia quo.
-                </div>
-                <div className="flex justify-center  gap-4 mt-15">
-                  <Link
-                    href="#"
-                    className=" text-sm md:text-xl  lg:text-xl xl:text-2
-                     rounded-xl btn-glass hover:text-red-500 font-bold hover:bg-neutral-300 hover:translate-x-2 transition"
-                  >
-                    Explore More
-                  </Link>
-                  <Link
-                    href="#"
-                    className=" text-sm md:text-xl lg:text-xl xl:text-2 btn-glass rounded-xl font-bold hover:bg-neutral-300 hover:text-red-500 hover:translate-x-2 transition duration-200"
-                  >
-                    Book A Free Consultation
-                  </Link>
-                </div>
+        <SwiperSlide className="">
+          <div>
+            <section className="w-full bg-white px-6 md:px-12 lg:px-20 py-12">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+              {/* Left: Text */}
+              <div className="flex-1 text-center md:text-left">
+                <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                  Build Your Website with Confidence
+                </h1>
+                <p className="text-gray-600 mb-8 text-lg">
+                  We provide modern web development, digital marketing, and
+                  excellent support to help your business grow online.
+                </p>
+                <button className="px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">
+                  Get Started
+                </button>
+              </div>
+
+              {/* Right: Image */}
+              <div className="flex-1">
+                <Image
+                  src="/Hero.png"
+                  alt="Team working illustration"
+                  width={930}
+                  height={768}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
               </div>
             </div>
-            <div className="w-full flex items-center justify-center h-full">
-              <Image width={500} className="w-[200px] md:w-[400px] xl:w-[600px] lg:w-[500px]  bg-cover" height={500} alt="Hero" src="/Hero.png" />
-            </div>
+          </section>
           </div>
         </SwiperSlide>
 
-        {/* Autoplay progress circle */}
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
             <circle cx="24" cy="24" r="20"></circle>

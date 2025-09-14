@@ -5,6 +5,7 @@ import Hero from './../components/Home/Hero';
 import UspSection from './../components/Home/UspSection';
 import About from './../components/Home/about';
 import ServiceSection from './../components/Home/services';
+import IndWeHelp from './../components/Home/indWeHelp';
 
 const Page = () => {
   return (
@@ -14,6 +15,7 @@ const Page = () => {
       <UspSection/>
       <About/>
       <ServiceSection/>
+      <IndWeHelp/>
       <Footer/>
     </div>
   )
