@@ -6,6 +6,8 @@ import UspSection from './../components/Home/UspSection';
 import About from './../components/Home/about';
 import ServiceSection from './../components/Home/services';
 import IndWeHelp from './../components/Home/indWeHelp';
+import Process from "../components/Home/process"
+import Trust from './../components/Home/trust';
 
 const Page = () => {
   return (
@@ -16,7 +18,10 @@ const Page = () => {
       <About/>
       <ServiceSection/>
       <IndWeHelp/>
+      <Process/>
+      <Trust/>
       <Footer/>
+      
     </div>
   )
 }
