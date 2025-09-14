@@ -18,7 +18,7 @@ const about = () => {
        <div className='p-4 space-y-4'>
         <div className='font-bold flex lg:block justify-center md:text-2xl lg:text-3xl'>What Runs In Our DNA</div>
         <p className='font-semibold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quisquam a provident inventore rerum hic. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero totam earum, maiores porro veritatis sapiente. Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur necessitatibus qui rerum assumenda similique! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, eos. Temporibus, blanditiis?</p>
-        <div className='space-x-4'>
+        <div className='space-x-4 flex'>
            <button className="btn-glass hover:translate-x-2 text-red-500">More About MostaSoft</button>
            <button className="btn-glass hover:translate-x-2 text-red-500">Contact The CEO</button>
         </div>
