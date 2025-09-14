@@ -8,6 +8,7 @@ import ServiceSection from './../components/Home/services';
 import IndWeHelp from './../components/Home/indWeHelp';
 import Process from "../components/Home/process"
 import Trust from './../components/Home/trust';
+import Project from './../components/Home/Project';
 
 const Page = () => {
   return (
@@ -20,6 +21,7 @@ const Page = () => {
       <IndWeHelp/>
       <Process/>
       <Trust/>
+      <Project/>
       <Footer/>
       
     </div>
