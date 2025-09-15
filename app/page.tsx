@@ -9,6 +9,7 @@ import IndWeHelp from './../components/Home/indWeHelp';
 import Process from "../components/Home/process"
 import Trust from './../components/Home/trust';
 import Project from './../components/Home/Project';
+import WhoWeWorkWith from './../components/Home/WorkWith';
 
 const Page = () => {
   return (
@@ -22,6 +23,7 @@ const Page = () => {
       <Process/>
       <Trust/>
       <Project/>
+      <WhoWeWorkWith/>
       <Footer/>
       
     </div>

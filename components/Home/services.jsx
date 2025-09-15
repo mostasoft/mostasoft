@@ -1,164 +1,79 @@
-import React from "react";
-import { BiRevision, BiSupport } from "react-icons/bi";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { MdHighQuality } from "react-icons/md";
-import { RiTeamFill } from "react-icons/ri";
+"use client";
 
-const ServiceSection = () => {
+import { FaClipboardList, FaDraftingCompass, FaServer, FaLaptopCode, FaCogs, FaHeadset } from "react-icons/fa";
+
+const steps = [
+  {
+    title: "Web Design",
+    description: "We make gathering project requirements, resources, and information a top priority to ensure a successful start to every project.",
+    icon: <FaClipboardList className="text-red-400 text-4xl mb-4" />,
+  },
+  {
+    title: "WordPress",
+    description: "We follow the first and foremost priority of gathering requirements, resources, and information to begin our project.",
+    icon: <FaDraftingCompass className="text-red-400 text-4xl mb-4" />,
+  },
+  {
+    title: "Front End",
+    description: "We deliver a prototype after designing, which our development team uses to bring your product to life.",
+    icon: <FaServer className="text-red-400 text-4xl mb-4" />,
+  },
+  {
+    title: "Backend",
+    description: "Development of mobile applications, web platforms & blockchain started using latest tools and technologies with transparency.",
+    icon: <FaLaptopCode className="text-red-400 text-4xl mb-4" />,
+  },
+  {
+    title: "E-Commerce",
+    description: "Development of mobile applications, web platforms & blockchain started using latest tools and technologies with transparency.",
+    icon: <FaLaptopCode className="text-red-400 text-4xl mb-4" />,
+  },
+  {
+  
+    title: "Woo-Commerce",
+    description: "Development of mobile applications, web platforms & blockchain started using latest tools and technologies with transparency.",
+    icon: <FaLaptopCode className="text-red-400 text-4xl mb-4" />,
+  },
+  {
+   
+    title: "Health Care",
+    description: "Development of mobile applications, web platforms & blockchain started using latest tools and technologies with transparency.",
+    icon: <FaLaptopCode className="text-red-400 text-4xl mb-4" />,
+  },
+  {
+    
+    title: "Food Business",
+    description: "Development of mobile applications, web platforms & blockchain started using latest tools and technologies with transparency.",
+    icon: <FaLaptopCode className="text-red-400 text-4xl mb-4" />,
+  },
+];
+
+export default function Services() {
   return (
-    <div className="p-15 bg-gray-100 space-y-3">
-      <div className="flex lg:p-4 font-bold text-xl lg:text-4xl justify-center items-center">
-        Reliable Services We Offer
-      </div>
-      <div className="grid grid-cols-1 space-y-2  space-x-4 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
-        <div className=" p-4 hover:-translate-y-3 btn-glass">
-          <div className="space-y-2">
-            <div className="flex items-center space-x-2">
-              <RiTeamFill className="" />
-              <div className="text-xl font-bold">Web Design</div>
-            </div>
-
-            <div>
-              We’re more than developers—we’re your partners. Our skilled team
-              works exclusively on your project, ensuring focus and efficiency.
-            </div>
-          <div>
-            
-             <button className="btn-glass flex justify-center items-center gap-2 hover:translate-x-2 text-red-500">  Let's Talk <IoLogoWhatsapp /> </button>
-           </div>
-          </div>
-        </div>
-        <div className=" p-4 hover:-translate-y-3  btn-glass">
-          <div className="space-y-2">
-           <div className="flex items-center space-x-2">
-             <MdHighQuality />
-            <div className="text-xl font-bold">WordPress</div>
-           </div>
-            <div>
-              Excellence is our standard. Every line of code, every design
-              element, and every detail is crafted with precision to deliver
-              world-class quality for your business.
-            </div>
-          <div>
-            
-             <button className="btn-glass flex justify-center items-center gap-2 hover:translate-x-2 text-red-500">  Let's Talk <IoLogoWhatsapp /> </button>
-           </div>
-          </div>
-        </div>
-        <div className=" p-4 hover:-translate-y-3 btn-glass">
-          <div className="space-y-2">
-           <div className="flex items-center space-x-2">
-             <BiSupport />
-            <div className="text-xl font-bold">Front End</div>
-           </div>
-            <div>
-              We’ve got your back—always. From day one to launch (and beyond),
-              our support team is here 24/7 to solve problems and keep your
-              project running smoothly.
-            </div>
-           <div>
-            
-             <button className="btn-glass flex justify-center items-center gap-2 hover:translate-x-2 text-red-500">  Let's Talk <IoLogoWhatsapp /> </button>
-           </div>
-          </div>
-        </div>
-        <div className=" p-4 hover:-translate-y-3 btn-glass ">
-          <div className="space-y-2">
-            <div className="flex items-center space-x-2">
-             <BiRevision />
-            <div className="text-xl font-bold">Back End</div>
-           </div>
-            <div>
-              Your satisfaction comes first. We don’t stop until you’re 100%
-              happy—because your vision deserves to be perfected without
-              compromise.
-            </div>
-          <div>
-            
-             <button className="btn-glass flex justify-center items-center gap-2 hover:translate-x-2 text-red-500">  Let's Talk <IoLogoWhatsapp /> </button>
-           </div>
-          </div>
-        </div>
-      </div>
-       <div className="flex lg:p-4 font-bold text-xl lg:text-4xl justify-center items-center">
-        By Category
-      </div>
-      <div className="grid grid-cols-1 space-y-2  space-x-4 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
-        <div className=" p-4 hover:-translate-y-3 btn-glass">
-          <div className="space-y-2">
-            <div className="flex items-center space-x-2">
-              <RiTeamFill className="" />
-              <div className="text-xl font-bold">E-Commerce</div>
-            </div>
-
-            <div>
-              We’re more than developers—we’re your partners. Our skilled team
-              works exclusively on your project, ensuring focus and efficiency.
-            </div>
-            <div>
-            
-             <button className="btn-glass flex justify-center items-center gap-2 hover:translate-x-2 text-red-500">  Let's Talk <IoLogoWhatsapp /> </button>
-           </div>
-          </div>
-        </div>
-        <div className=" p-4 hover:-translate-y-3 btn-glass">
-          <div className="space-y-2">
-           <div className="flex items-center space-x-2">
-             <MdHighQuality />
-            <div className="text-xl font-bold">Woo-Commererce</div>
-           </div>
-            <div>
-              Excellence is our standard. Every line of code, every design
-              element, and every detail is crafted with precision to deliver
-              world-class quality for your business.
-            </div>
-           <div>
-            
-             <button className="btn-glass flex justify-center items-center gap-2 hover:translate-x-2 text-red-500">  Let's Talk <IoLogoWhatsapp /> </button>
-           </div>
-          </div>
-        </div>
-        <div className=" p-4 hover:-translate-y-3 btn-glass">
-          <div className="space-y-2">
-           <div className="flex items-center space-x-2">
-             <BiSupport />
-            <div className="text-xl font-bold">Health Care</div>
-           </div>
-            <div>
-              We’ve got your back—always. From day one to launch (and beyond),
-              our support team is here 24/7 to solve problems and keep your
-              project running smoothly.
-            </div>
-            <div>
-            
-             <button className="btn-glass flex justify-center items-center gap-2 hover:translate-x-2 text-red-500">  Let's Talk <IoLogoWhatsapp /> </button>
-           </div>
-          </div>
-        </div>
-        <div className=" p-4 hover:-translate-y-3 btn-glass ">
-          <div className="space-y-2">
-            <div className="flex items-center space-x-2">
-             <BiRevision />
-            <div className="text-xl font-bold">Food Business</div>
-           </div>
-            <div>
-              Your satisfaction comes first. We don’t stop until you’re 100%
-              happy—because your vision deserves to be perfected without
-              compromise.
-            </div>
-           <div>
-            
-             <button className="btn-glass flex justify-center items-center gap-2 hover:translate-x-2 text-red-500">  Let's Talk <IoLogoWhatsapp /> </button>
-           </div>
-          </div>
-        </div>
+    <section className="py-16 bg-gray-100 text-black">
+      <div className="max-w-6xl mx-auto px-6 text-center">
         
-      </div>
-      <div className="flex font-bold  cursor-pointer justify-center items-center">
-        <h1 className="btn-glass bg-red-500 text-white hover:translate-x-4">Load More</h1>
-      </div>
-    </div>
-  );
-};
+        {/* Heading */}
+       <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          Rwliable Services <br/> <span className="text-red-600">We Offer</span>
+        </h2>
 
-export default ServiceSection;
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {steps.map((step) => (
+            <div 
+            key={step.title}
+              className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 duration-300"
+            >
+              <div className="flex justify-center">{step.icon}</div>
+              <h3 className="font-semibold text-lg mb-2"> {step.title}</h3>
+              <p className="text-black text-sm">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+       <div className=" flex justify-center p-5">
+        <button className="btn-glass bg-red-400 hover:translate-x-2 font-bold text-white"> Load More Services</button></div>
+    </section>
+  );
+}

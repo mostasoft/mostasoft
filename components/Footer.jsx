@@ -12,7 +12,7 @@ export default function Footer() {
           
           {/* Brand Column */}
           <div>
-            <h2 className="text-2xl font-bold mb-2">YourBrand</h2>
+            <h2 className="text-2xl font-bold mb-2">MostaSoft</h2>
             <p className="text-sm opacity-90 leading-relaxed">
               Building modern, responsive, and scalable web solutions 
               for businesses and individuals worldwide.
