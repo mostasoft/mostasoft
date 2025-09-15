@@ -10,6 +10,7 @@ import Process from "../components/Home/process"
 import Trust from './../components/Home/trust';
 import Project from './../components/Home/Project';
 import WhoWeWorkWith from './../components/Home/WorkWith';
+import GetQuoteForm from './../components/Home/CTA';
 
 const Page = () => {
   return (
@@ -24,6 +25,7 @@ const Page = () => {
       <Trust/>
       <Project/>
       <WhoWeWorkWith/>
+      <GetQuoteForm/>
       <Footer/>
       
     </div>
