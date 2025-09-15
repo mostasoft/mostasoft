@@ -4,7 +4,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/f
 
 export default function Footer() {
   return (
-    <footer className="bg-[#e63946] text-white">
+    <footer className="bg-gray-300 text-black">
       <div className="max-w-7xl mx-auto px-6 py-16">
 
         {/* 4 Columns: Brand + 3 link sections */}

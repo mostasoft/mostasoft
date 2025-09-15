@@ -12,6 +12,7 @@ import Project from './../components/Home/Project';
 import WhoWeWorkWith from './../components/Home/WorkWith';
 import GetQuoteForm from './../components/Home/CTA';
 import Team from './../components/Home/Team';
+import TechBehindUs from './../components/Home/TechBehindUs';
 
 const Page = () => {
   return (
@@ -26,6 +27,7 @@ const Page = () => {
       <Team/>
       <Trust/>
       <Project/>
+      <TechBehindUs/>
       <WhoWeWorkWith/>
       <GetQuoteForm/>
       <Footer/>
