@@ -17,7 +17,7 @@ import TechBehindUs from './../components/Home/TechBehindUs';
 const Page = () => {
   return (
     <div>
-      <NavBar/>
+     
       <Hero/>
       <UspSection/>
       <About/>
@@ -30,7 +30,7 @@ const Page = () => {
       <TechBehindUs/>
       <WhoWeWorkWith/>
       <GetQuoteForm/>
-      <Footer/>
+     
       
     </div>
   )
