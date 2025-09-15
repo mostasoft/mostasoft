@@ -1,69 +1,107 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import { AiFillInstagram } from "react-icons/ai";
-import { FaLinkedin } from "react-icons/fa";
-import { FaSquareFacebook, FaXTwitter } from "react-icons/fa6";
+// components/Footer.tsx
 
-const Footer = () => {
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+
+export default function Footer() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-8 items-center justify-center bg-gray-200 ">
-      <div className=" space-y-9">
-        <Link href="#">
-          <div className="flex hover:translate-x-2 transition duration-300 hover:text-red-500 items-center  gap-2 font-bold text-sm md:text-2xl lg:text-2xl xl:text-2xl">
-            <Image src="/Logo.png" width={40} height={40} alt="Logo" />
-            <h1>MostaSoft</h1>
+    <footer className="bg-[#e63946] text-white">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+
+        {/* 4 Columns: Brand + 3 link sections */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          
+          {/* Brand Column */}
+          <div>
+            <h2 className="text-2xl font-bold mb-2">YourBrand</h2>
+            <p className="text-sm opacity-90 leading-relaxed">
+              Building modern, responsive, and scalable web solutions 
+              for businesses and individuals worldwide.
+            </p>
           </div>
-        </Link>
 
-        <div className="">
-            <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ut
-          voluptatibus hic nesciunt.
-        </p>
+          {/* Quick Links Column */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul className="flex flex-col gap-3">
+              <li>
+                <a className="block bg-white/10 hover:bg-white/20 text-sm px-4 py-2 rounded-lg shadow-md transition" href="#">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a className="block bg-white/10 hover:bg-white/20 text-sm px-4 py-2 rounded-lg shadow-md transition" href="#">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a className="block bg-white/10 hover:bg-white/20 text-sm px-4 py-2 rounded-lg shadow-md transition" href="#">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a className="block bg-white/10 hover:bg-white/20 text-sm px-4 py-2 rounded-lg shadow-md transition" href="#">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Services Column */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Services</h3>
+            <ul className="flex flex-col gap-3">
+              <li>
+                <a className="block bg-white/10 hover:bg-white/20 text-sm px-4 py-2 rounded-lg shadow-md transition" href="#">
+                  Web Development
+                </a>
+              </li>
+              <li>
+                <a className="block bg-white/10 hover:bg-white/20 text-sm px-4 py-2 rounded-lg shadow-md transition" href="#">
+                  UI/UX Design
+                </a>
+              </li>
+              <li>
+                <a className="block bg-white/10 hover:bg-white/20 text-sm px-4 py-2 rounded-lg shadow-md transition" href="#">
+                  E-Commerce
+                </a>
+              </li>
+              <li>
+                <a className="block bg-white/10 hover:bg-white/20 text-sm px-4 py-2 rounded-lg shadow-md transition" href="#">
+                  SEO & Marketing
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Get in Touch</h3>
+            <p className="text-sm mb-1">📧 support@yourbrand.com</p>
+            <p className="text-sm mb-4">📞 +880 1234 567 890</p>
+
+            <div className="flex space-x-3">
+              <a href="#" className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition">
+                <FaFacebookF />
+              </a>
+              <a href="#" className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition">
+                <FaTwitter />
+              </a>
+              <a href="#" className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition">
+                <FaInstagram />
+              </a>
+              <a href="#" className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition">
+                <FaLinkedinIn />
+              </a>
+            </div>
+          </div>
+
         </div>
-        <div className="flex gap-4">
-            <button className="btn-glass">hello</button>
-            <button className="btn-glass">hello</button>
+
+        {/* Bottom Bar */}
+        <div className="text-center text-sm mt-10 opacity-80 border-t border-white/20 pt-6">
+          © {new Date().getFullYear()} YourBrand. All rights reserved.
         </div>
-         <div className=' w-full  flex space-x-4'>
-          <Link href="#" className='bg-white  hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-xl p-2 rounded-xlbackdrop-blur-2xl shadow-3xl'><FaLinkedin /></Link>
-          <Link href="#" className='bg-white  hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-xl p-2 rounded-xlbackdrop-blur-2xl shadow-3xl'><AiFillInstagram /></Link>
-          <Link href="#" className='bg-white  hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-xl p-2 rounded-xlbackdrop-blur-2xl shadow-3xl'><FaSquareFacebook /></Link>
-          <Link href="#" className='bg-white  hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-xl p-2 rounded-xlbackdrop-blur-2xl shadow-3xl'><FaXTwitter /></Link>
-        </div>
-        
       </div>
-      
-       <div className="space-y-3 w-full">
-        <div className="btn-glass font-bold text-xl   hover:text-red-500 hover:translate-x-2  "> 
-        <Link href="#">Company</Link></div>
-        <div className="btn-glass w-50 hover:text-red-500 hover:translate-x-2 "> <Link href="#" >About</Link></div>
-        <div className="btn-glass w-40 hover:text-red-500 hover:translate-x-2 "><Link href="#">Case Studies</Link></div>
-        <div className="btn-glass w-30  hover:text-red-500 hover:translate-x-2 "><Link href="#"  className="  ">Blog</Link></div>
-        <div className="btn-glass  w-20 hover:text-red-500 hover:translate-x-2 "><Link href="#"  className="  ">Teams</Link></div>
-       </div>
-      
-      <div className="space-y-3 w-full">
-        <div className="btn-glass text-xl font-bold  hover:text-red-500 hover:translate-x-2  "> 
-        <Link href="#">Services</Link></div>
-        <div className="btn-glass w-50 hover:text-red-500 hover:translate-x-2 "> <Link href="#" >WordPress</Link></div>
-        <div className="btn-glass w-40 hover:text-red-500 hover:translate-x-2 "><Link href="#">Web Design</Link></div>
-        <div className="btn-glass w-30  hover:text-red-500 hover:translate-x-2 "><Link href="#"  className="  ">Front End</Link></div>
-        <div className="btn-glass  w-25 hover:text-red-500 hover:translate-x-2 "><Link href="#"  className="  ">Back End</Link></div>
-       </div>
-      
-      <div className="space-y-3 w-full">
-        <div className="btn-glass  text-xl font-bold hover:text-red-500 hover:translate-x-2  "> 
-        <Link href="#">Industries</Link></div>
-        <div className="btn-glass w-50 hover:text-red-500 hover:translate-x-2 "> <Link href="#" >E-commerce</Link></div>
-        <div className="btn-glass w-40 hover:text-red-500 hover:translate-x-2 "><Link href="#">Healthcare</Link></div>
-        <div className="btn-glass w-30  hover:text-red-500 hover:translate-x-2 "><Link href="#"  className="  ">Real Estate</Link></div>
-        <div className="btn-glass  w-20 hover:text-red-500 hover:translate-x-2 "><Link href="#"  className="  ">Food</Link></div>
-       </div>
-      
-    </div>
+    </footer>
   );
-};
-
-export default Footer;
+}
