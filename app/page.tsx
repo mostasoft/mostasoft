@@ -11,6 +11,7 @@ import Trust from './../components/Home/trust';
 import Project from './../components/Home/Project';
 import WhoWeWorkWith from './../components/Home/WorkWith';
 import GetQuoteForm from './../components/Home/CTA';
+import Team from './../components/Home/Team';
 
 const Page = () => {
   return (
@@ -22,6 +23,7 @@ const Page = () => {
       <ServiceSection/>
       <IndWeHelp/>
       <Process/>
+      <Team/>
       <Trust/>
       <Project/>
       <WhoWeWorkWith/>
