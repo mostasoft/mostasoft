@@ -65,3 +65,18 @@
 .swiper-button-prev::after {
   font-size: 15px !important;  /* smaller arrow icon */
 }
+
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  display: flex;
+  animation: slide 20s linear infinite;
+}
