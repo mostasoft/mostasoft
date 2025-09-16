@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -22,19 +23,25 @@ const NavBar = () => {
         </div>
         <div className="w-full px-8 flex space-x-4 justify-center md:justify-end">
           <Link
-            href="#"
+            href="https://www.linkedin.com/company/mostasoft2/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
           >
             <FaLinkedin />
           </Link>
           <Link
-            href="#"
+            href="https://www.instagram.com/mostasoft"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
           >
             <AiFillInstagram />
           </Link>
           <Link
-            href="#"
+            href="https://www.facebook.com/profile.php?id=61577960994285"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
           >
             <FaSquareFacebook />
@@ -67,37 +74,52 @@ const NavBar = () => {
             Home
           </Link>
 
-          {/* Services with dropdown */}
+          {/* Services Dropdown */}
           <div
-            className="relative group "
+            className="relative"
             onMouseEnter={() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
-            <Link
-              href="/services/"
-              className="hover:bg-white/30 hover:text-red-500  rounded-2xl p-2"
-            >
+            <button className="hover:bg-white/30 hover:text-red-500 rounded-2xl p-2">
               Services
-            </Link>
+            </button>
 
-            {isDropdownOpen && (
-              <div
-                className="absolute p-0 top-full left-0 mt-2 w-55 rounded-2xl bg-neutral-100 text-black btn-glass shadow-lg z-50 py-2
-               opacity-0 translate-y-3 pointer-events-none
-               group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto
-               transition-all duration-700 ease-in-out"
+            {/* Dropdown Menu */}
+            <div
+              className={`absolute top-full left-0  w-56 rounded-2xl bg-gray-200 shadow-lg z-50 py-2 transition-all duration-500 ease-in-out
+              ${isDropdownOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-3 pointer-events-none"}`}
+            >
+              <div className="mt-5"><Link
+                href="/services/webDesign"
+                className="block px-4 py-2  rounded-2xl hover:text-red-500"
               >
-                <Link href="#" className="block px-4 py-2 hover:bg-red-500 rounded-2xl hover:text-white">
-                  Budget Planning
-                </Link>
-                <Link href="#" className="block px-4 py-2  hover:text-white hover:bg-red-500 rounded-2xl">
-                  Investment Advice
-                </Link>
-                <Link href="#" className="block px-4 py-2 hover:text-white  hover:bg-red-500 rounded-2xl">
-                  Tax Optimization
-                </Link>
-              </div>
-            )}
+                Web Design
+              </Link>
+              <Link
+                href="/services/CustomDev"
+                className="block px-4 py-2  rounded-2xl hover:text-red-500"
+              >
+                Custom Website
+              </Link>
+              <Link
+                href="/services/WordPress"
+                className="block px-4 py-2  rounded-2xl hover:text-red-500"
+              >
+                WordPress Website
+              </Link>
+              <Link
+                href="/services/webDesign"
+                className="block px-4 py-2  rounded-2xl hover:text-red-500"
+              >
+                Graphics Design
+              </Link>
+              <Link
+                href="/services/videoEditing"
+                className="block px-4 py-2  rounded-2xl hover:text-red-500"
+              >
+                Video Editing
+              </Link></div>
+            </div>
           </div>
 
           <Link
@@ -145,17 +167,16 @@ const NavBar = () => {
 
       {/* Mobile Nav */}
       <div
-        className={`
-          fixed top-0 left-0 h-full w-1/2 bg-gray-200 shadow-lg z-50
-          transform transition-transform duration-500 ease-in-out
-          ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}
-        `}
+        className={`fixed top-0 left-0 h-full w-1/2 bg-gray-200 shadow-lg z-50 transform transition-transform duration-500 ease-in-out
+        ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="p-6 relative flex flex-col gap-4">
           <Link href="/">Home</Link>
           <Link href="#">About</Link>
           <Link href="#">Services</Link>
           <Link href="#">Contact</Link>
+
+          {/* Close Button */}
           <div className="btn-glass px-2 py-2 rounded-full absolute top-0 text-xl right-0 cursor-pointer mt-4 mr-5">
             <IoMdCloseCircle onClick={toggler} />
           </div>
