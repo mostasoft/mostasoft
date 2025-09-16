@@ -8,6 +8,25 @@ import { FaBars, FaLinkedin } from "react-icons/fa";
 import { FaSquareFacebook, FaXTwitter } from "react-icons/fa6";
 import { IoMdCloseCircle } from "react-icons/io";
 
+const MobileDropdown = ({ title, children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="flex flex-col">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full text-left font-bold p-2 rounded-lg bg-gray-300 flex justify-between items-center"
+      >
+        {title}
+        <span className={`transition-transform duration-300 ${isOpen ? "rotate-90" : "rotate-0"}`}>
+          ▶
+        </span>
+      </button>
+      {isOpen && <div className="flex flex-col pl-4 mt-2 gap-1">{children}</div>}
+    </div>
+  );
+};
+
 const NavBar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -84,60 +103,35 @@ const NavBar = () => {
               Services
             </button>
 
-            {/* Dropdown Menu */}
             <div
-              className={`absolute top-full left-0  w-56 rounded-2xl bg-gray-200 shadow-lg z-50 py-2 transition-all duration-500 ease-in-out
+              className={`absolute top-full left-0 w-56 rounded-2xl bg-gray-200 shadow-lg z-50 py-2 transition-all duration-500 ease-in-out
               ${isDropdownOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-3 pointer-events-none"}`}
             >
-              <div className="mt-5"><Link
-                href="/services/webDesign"
-                className="block px-4 py-2  rounded-2xl hover:text-red-500"
-              >
+              <Link href="/services/webDesign" className="block px-4 py-2 rounded-2xl hover:text-red-500">
                 Web Design
               </Link>
-              <Link
-                href="/services/CustomDev"
-                className="block px-4 py-2  rounded-2xl hover:text-red-500"
-              >
+              <Link href="/services/CustomDev" className="block px-4 py-2 rounded-2xl hover:text-red-500">
                 Custom Website
               </Link>
-              <Link
-                href="/services/WordPress"
-                className="block px-4 py-2  rounded-2xl hover:text-red-500"
-              >
+              <Link href="/services/WordPress" className="block px-4 py-2 rounded-2xl hover:text-red-500">
                 WordPress Website
               </Link>
-              <Link
-                href="/services/webDesign"
-                className="block px-4 py-2  rounded-2xl hover:text-red-500"
-              >
+              <Link href="/services/graphics" className="block px-4 py-2 rounded-2xl hover:text-red-500">
                 Graphics Design
               </Link>
-              <Link
-                href="/services/videoEditing"
-                className="block px-4 py-2  rounded-2xl hover:text-red-500"
-              >
+              <Link href="/services/videoEditing" className="block px-4 py-2 rounded-2xl hover:text-red-500">
                 Video Editing
-              </Link></div>
+              </Link>
             </div>
           </div>
 
-          <Link
-            href="#"
-            className="hover:bg-white/30 hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-2xl p-2"
-          >
+          <Link href="#" className="hover:bg-white/30 hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-2xl p-2">
             Works
           </Link>
-          <Link
-            href="#"
-            className="hover:bg-white/30 hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-2xl p-2"
-          >
+          <Link href="#" className="hover:bg-white/30 hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-2xl p-2">
             Blog
           </Link>
-          <Link
-            href="#"
-            className="hover:bg-white/30 hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-2xl p-2"
-          >
+          <Link href="#" className="hover:bg-white/30 hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-2xl p-2">
             Contact
           </Link>
         </div>
@@ -151,19 +145,11 @@ const NavBar = () => {
         </Link>
 
         {/* Mobile Menu Icon */}
-        <FaBars
-          onClick={toggler}
-          className="lg:hidden md:hidden cursor-pointer"
-        />
+        <FaBars onClick={toggler} className="lg:hidden md:hidden cursor-pointer" />
       </div>
 
       {/* Overlay */}
-      {isMobileOpen && (
-        <div
-          onClick={toggler}
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
-        ></div>
-      )}
+      {isMobileOpen && <div onClick={toggler} className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"></div>}
 
       {/* Mobile Nav */}
       <div
@@ -173,7 +159,26 @@ const NavBar = () => {
         <div className="p-6 relative flex flex-col gap-4">
           <Link href="/">Home</Link>
           <Link href="#">About</Link>
-          <Link href="#">Services</Link>
+
+          {/* Mobile Services Dropdown */}
+          <MobileDropdown title="Services">
+            <Link href="/services/webDesign" className="p-2 hover:bg-red-500 hover:text-white rounded-lg">
+              Web Design
+            </Link>
+            <Link href="/services/CustomDev" className="p-2 hover:bg-red-500 hover:text-white rounded-lg">
+              Custom Website
+            </Link>
+            <Link href="/services/WordPress" className="p-2 hover:bg-red-500 hover:text-white rounded-lg">
+              WordPress Website
+            </Link>
+            <Link href="/services/graphics" className="p-2 hover:bg-red-500 hover:text-white rounded-lg">
+              Graphics Design
+            </Link>
+            <Link href="/services/videoEditing" className="p-2 hover:bg-red-500 hover:text-white rounded-lg">
+              Video Editing
+            </Link>
+          </MobileDropdown>
+
           <Link href="#">Contact</Link>
 
           {/* Close Button */}
