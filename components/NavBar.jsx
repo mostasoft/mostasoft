@@ -6,7 +6,10 @@ import React, { useState } from "react";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaBars, FaLinkedin } from "react-icons/fa";
 import { FaSquareFacebook, FaXTwitter } from "react-icons/fa6";
+import { FcAbout } from "react-icons/fc";
 import { IoMdCloseCircle } from "react-icons/io";
+import { IoCall, IoHome } from "react-icons/io5";
+import { MdMiscellaneousServices } from "react-icons/md";
 
 const MobileDropdown = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,9 +18,10 @@ const MobileDropdown = ({ title, children }) => {
     <div className="flex flex-col">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left font-bold p-2 rounded-lg bg-gray-300 flex justify-between items-center"
+        className="w-full text-left font-bold rounded-lg  flex justify-between items-center"
       >
-        {title}
+          <Link className="font-bold flex items-center gap-1" href="/"><span><MdMiscellaneousServices/></span>Services</Link>
+       
         <span
           className={`transition-transform duration-300 ${
             isOpen ? "rotate-90" : "rotate-0"
@@ -119,7 +123,7 @@ const NavBar = () => {
             >
               <Link
                 href="/services/webDesign"
-                className="block px-4 py-2 rounded-2xl hover:text-[var(--MostUsed-color)]"
+                className="block  px-4 py-2 rounded-2xl hover:text-[var(--MostUsed-color)]"
               >
                 Web Design
               </Link>
@@ -198,48 +202,48 @@ const NavBar = () => {
         className={`fixed top-0 left-0 h-full w-1/2 bg-gray-200 shadow-lg z-50 transform transition-transform duration-500 ease-in-out
         ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
-        <div className="p-6 relative flex flex-col gap-4">
-          <Link href="/">Home</Link>
-          <Link href="#">About</Link>
+        <div className="p-6  relative flex flex-col gap-4">
+          <Link className="font-bold flex items-center gap-1" href="/"><span><IoHome/></span>Home</Link>
+          <Link className="font-bold flex items-center gap-1" href="#"><span><FcAbout/></span>About</Link>
 
           {/* Mobile Services Dropdown */}
-          <MobileDropdown title="Services">
+          <MobileDropdown  title="Services">
             <Link
               href="/services/webDesign"
-              className="p-2 hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
+              className="p-2 font-semibold hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
             >
               Web Design
             </Link>
             <Link
               href="/services/CustomDev"
-              className="p-2 hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
+              className="p-2 font-semibold hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
             >
               Custom Website
             </Link>
             <Link
               href="/services/WordPress"
-              className="p-2 hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
+              className="p-2 hover:bg-[var(--MostUsed-color)] hover:text-white font-semibold rounded-lg"
             >
               WordPress Website
             </Link>
             <Link
               href="/services/graphics"
-              className="p-2 hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
+              className="p-2 font-semibold hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
             >
               Graphics Design
             </Link>
             <Link
               href="/services/videoEditing"
-              className="p-2 hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
+              className="p-2 font-semibold hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
             >
               Video Editing
             </Link>
           </MobileDropdown>
 
-          <Link href="#">Contact</Link>
+          <Link className="font-bold flex items-center gap-1" href="#"><span><IoCall/></span>Contact</Link>
 
           {/* Close Button */}
-          <div className="btn-glass px-2 py-2 rounded-full absolute top-0 text-xl right-0 cursor-pointer mt-4 mr-5">
+          <div className="btn-glass px-2 py-2 bg-red-300 rounded-full absolute top-0 text-xl right-0 cursor-pointer mt-4 mr-5">
             <IoMdCloseCircle onClick={toggler} />
           </div>
         </div>

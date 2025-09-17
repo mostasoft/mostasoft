@@ -30,8 +30,6 @@ const Page = () => {
       <TechBehindUs/>
       <WhoWeWorkWith/>
       <GetQuoteForm/>
-     
-      
     </div>
   )
 }
