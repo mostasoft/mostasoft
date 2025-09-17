@@ -26,19 +26,19 @@ export default function WhoWeWorkWith() {
 
         {/* Right Side: Cards */}
         <div className="grid grid-cols-2 gap-6">
-          <div className="bg-red-600 hover:bg-red-700 transition text-center text-white font-semibold p-6 rounded-md shadow-md">
+          <div className="bg-[var(--MostUsed-color)] hover:bg-red-700 transition text-center text-white font-semibold p-6 rounded-md shadow-md">
             Start Up Business
           </div>
-          <div className="bg-red-600 hover:bg-red-700 transition text-center text-white font-semibold p-6 rounded-md shadow-md">
+          <div className="bg-[var(--MostUsed-color)] hover:bg-red-700 transition text-center text-white font-semibold p-6 rounded-md shadow-md">
             Enterprise
           </div>
-          <div className="bg-red-600 hover:bg-red-700 transition text-center text-white font-semibold p-6 rounded-md shadow-md col-span-2">
+          <div className="bg-[var(--MostUsed-color)] hover:bg-red-700 transition text-center text-white font-semibold p-6 rounded-md shadow-md col-span-2">
             We Have 50+ Successful Freelancers
           </div>
-          <div className="bg-red-600 hover:bg-red-700 transition text-center text-white font-semibold p-6 rounded-md shadow-md">
+          <div className="bg-[var(--MostUsed-color)] hover:bg-red-700 transition text-center text-white font-semibold p-6 rounded-md shadow-md">
             Small & Medium Business
           </div>
-          <div className="bg-red-600 hover:bg-red-700 transition text-center text-white font-semibold p-6 rounded-md shadow-md">
+          <div className="bg-[var(--MostUsed-color)] hover:bg-red-700 transition text-center text-white font-semibold p-6 rounded-md shadow-md">
             Agencies
           </div>
         </div>

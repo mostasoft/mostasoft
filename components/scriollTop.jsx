@@ -33,7 +33,7 @@ export default function ScrollToTop() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 p-3 rounded-full bg-red-500 text-white shadow-lg hover:bg-red-600 transition"
+          className="fixed bottom-6 right-6 p-3 rounded-full bg-[var(--MostUsed-color)] text-white shadow-lg hover:bg-red-600 transition"
         >
           <FaArrowUp size={20} />
         </button>

@@ -4,6 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 const reviews = [
   {
@@ -60,10 +66,10 @@ export default function ClientReviewSlider() {
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        
         {/* Heading */}
         <h2 className="text-4xl font-bold mb-12">
-          What People Are  <span className="text-red-500">Saying About MostaSoft</span>
+          What People Are{" "}
+          <span className="text-[var(--MostUsed-color)]">Saying About MostaSoft</span>
         </h2>
 
         {/* Swiper */}
@@ -74,28 +80,55 @@ export default function ClientReviewSlider() {
           loop={true}
           spaceBetween={30}
           breakpoints={{
-            320: { slidesPerView: 1 },   // Mobile
-            640: { slidesPerView: 2 },   // Tablet
-            1024: { slidesPerView: 3 },  // Desktop
+            320: { slidesPerView: 1 }, // Mobile
+            640: { slidesPerView: 2 }, // Tablet
+            1024: { slidesPerView: 3 }, // Desktop
           }}
         >
           {reviews.map((client) => (
             <SwiperSlide key={client.id}>
               <div className="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center h-full">
-                
                 {/* Profile Image */}
                 <img
                   src={client.image}
                   alt={client.name}
-                  className="w-20 h-20 rounded-full border-4 border-red-500 mb-4"
+                  className="w-20 h-20 rounded-full border-4 border-[var(--MostUsed-color)] mb-4"
                 />
 
                 {/* Review */}
-                <p className="text-gray-600 italic mb-4 text-sm">"{client.review}"</p>
+                <p className="text-gray-600 italic mb-4 text-sm">
+                  "{client.review}"
+                </p>
 
                 {/* Name & Role */}
-                <h4 className="font-semibold text-gray-800">{client.name}</h4>
+                <h4 className="font-semibold text-2xl text-gray-800">{client.name}</h4>
                 <p className="text-gray-500 text-xs">{client.role}</p>
+                <div className="flex mt-2 justify-center space-x-2">
+                  <a
+                    href="#"
+                    className="p-2 bg-[var(--MostUsed-color)] text-sm rounded-full hover:bg-black transition"
+                  >
+                    <FaFacebookF />
+                  </a>
+                  <a
+                    href="#"
+                    className="p-2 bg-[var(--MostUsed-color)] text-sm rounded-full hover:bg-black  transition"
+                  >
+                    <FaTwitter />
+                  </a>
+                  <a
+                    href="#"
+                    className="p-2 bg-[var(--MostUsed-color)] text-sm  rounded-full hover:bg-black  transition"
+                  >
+                    <FaInstagram />
+                  </a>
+                  <a
+                    href="#"
+                    className="p-2 bg-[var(--MostUsed-color)] text-sm rounded-full hover:bg-black  transition"
+                  >
+                    <FaLinkedinIn />
+                  </a>
+                </div>
               </div>
             </SwiperSlide>
           ))}

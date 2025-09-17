@@ -18,11 +18,17 @@ const MobileDropdown = ({ title, children }) => {
         className="w-full text-left font-bold p-2 rounded-lg bg-gray-300 flex justify-between items-center"
       >
         {title}
-        <span className={`transition-transform duration-300 ${isOpen ? "rotate-90" : "rotate-0"}`}>
+        <span
+          className={`transition-transform duration-300 ${
+            isOpen ? "rotate-90" : "rotate-0"
+          }`}
+        >
           ▶
         </span>
       </button>
-      {isOpen && <div className="flex flex-col pl-4 mt-2 gap-1">{children}</div>}
+      {isOpen && (
+        <div className="flex flex-col pl-4 mt-2 gap-1">{children}</div>
+      )}
     </div>
   );
 };
@@ -45,7 +51,7 @@ const NavBar = () => {
             href="https://www.linkedin.com/company/mostasoft2/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
+            className="bg-white hover:text-[var(--MostUsed-color)] hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
           >
             <FaLinkedin />
           </Link>
@@ -53,7 +59,7 @@ const NavBar = () => {
             href="https://www.instagram.com/mostasoft"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
+            className="bg-white hover:text-[var(--MostUsed-color)]  hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
           >
             <AiFillInstagram />
           </Link>
@@ -61,13 +67,13 @@ const NavBar = () => {
             href="https://www.facebook.com/profile.php?id=61577960994285"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
+            className="bg-white hover:text-[var(--MostUsed-color)] hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
           >
             <FaSquareFacebook />
           </Link>
           <Link
             href="#"
-            className="bg-white hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
+            className="bg-white hover:text-[var(--MostUsed-color)]  hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
           >
             <FaXTwitter />
           </Link>
@@ -78,7 +84,7 @@ const NavBar = () => {
       <div className="flex justify-between items-center p-7 bg-gray-200 relative">
         {/* Logo */}
         <Link href="#">
-          <div className="flex hover:translate-x-2 transition duration-300 hover:text-red-500 items-center gap-2 font-bold text-sm md:text-2xl">
+          <div className="flex hover:translate-x-2 transition duration-300 hover:text-[var(--MostUsed-color)] items-center gap-2 font-bold text-sm md:text-2xl">
             <Image src="/Logo.png" width={40} height={40} alt="Logo" />
             <h1>MostaSoft</h1>
           </div>
@@ -88,7 +94,7 @@ const NavBar = () => {
         <div className="hidden md:flex space-x-9 text-xl font-bold items-center relative">
           <Link
             href="/"
-            className="hover:bg-white/30 hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-2xl p-2"
+            className="hover:bg-white/30 hover:text-[var(--MostUsed-color)] hover:translate-x-2 transition duration-300 rounded-2xl p-2"
           >
             Home
           </Link>
@@ -99,39 +105,67 @@ const NavBar = () => {
             onMouseEnter={() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
-            <button className="hover:bg-white/30 hover:text-red-500 rounded-2xl p-2">
+            <button className="hover:bg-white/30 hover:text-[var(--MostUsed-color)] rounded-2xl p-2">
               Services
             </button>
 
             <div
               className={`absolute top-full left-0 w-56 rounded-2xl bg-gray-200 shadow-lg z-50 py-2 transition-all duration-500 ease-in-out
-              ${isDropdownOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-3 pointer-events-none"}`}
+              ${
+                isDropdownOpen
+                  ? "opacity-100 translate-y-0 pointer-events-auto"
+                  : "opacity-0 translate-y-3 pointer-events-none"
+              }`}
             >
-              <Link href="/services/webDesign" className="block px-4 py-2 rounded-2xl hover:text-red-500">
+              <Link
+                href="/services/webDesign"
+                className="block px-4 py-2 rounded-2xl hover:text-[var(--MostUsed-color)]"
+              >
                 Web Design
               </Link>
-              <Link href="/services/CustomDev" className="block px-4 py-2 rounded-2xl hover:text-red-500">
+              <Link
+                href="/services/CustomDev"
+                className="block px-4 py-2 rounded-2xl hover:text-[var(--MostUsed-color)] "
+              >
                 Custom Website
               </Link>
-              <Link href="/services/WordPress" className="block px-4 py-2 rounded-2xl hover:text-red-500">
+              <Link
+                href="/services/WordPress"
+                className="block px-4 py-2 rounded-2xl hover:text-[var(--MostUsed-color)] "
+              >
                 WordPress Website
               </Link>
-              <Link href="/services/graphics" className="block px-4 py-2 rounded-2xl hover:text-red-500">
+              <Link
+                href="/services/graphics"
+                className="block px-4 py-2 rounded-2xl hover:text-[var(--MostUsed-color)] "
+              >
                 Graphics Design
               </Link>
-              <Link href="/services/videoEditing" className="block px-4 py-2 rounded-2xl hover:text-red-500">
+              <Link
+                href="/services/videoEditing"
+                className="block px-4 py-2 rounded-2xl hover:text-[var(--MostUsed-color)] "
+              >
                 Video Editing
               </Link>
             </div>
           </div>
 
-          <Link href="#" className="hover:bg-white/30 hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-2xl p-2">
+          <Link
+            href="#"
+            className="hover:bg-white/30 hover:text-[var(--MostUsed-color)]  hover:translate-x-2 transition duration-300 rounded-2xl p-2"
+          >
             Works
           </Link>
-          <Link href="#" className="hover:bg-white/30 hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-2xl p-2">
+          <Link
+            href="#"
+            className="hover:bg-white/30 hover:text-[var(--MostUsed-color)]  hover:translate-x-2 transition duration-300 rounded-2xl p-2"
+          >
             Blog
           </Link>
-          <Link href="#" className="hover:bg-white/30 hover:text-red-500 hover:translate-x-2 transition duration-300 rounded-2xl p-2">
+          <Link
+            href="#"
+            className="hover:bg-white/30 hover:text-[var(--MostUsed-color)] hover:translate-x-2 transition duration-300 rounded-2xl p-2"
+          >
             Contact
           </Link>
         </div>
@@ -139,17 +173,25 @@ const NavBar = () => {
         {/* CTA Button */}
         <Link
           href="#"
-          className="font-bold text-sm md:text-xl border-white/100 shadow-xl backdrop-blur-xl rounded-2xl p-2 bg-white/30 hover:translate-x-2 transition duration-300 hover:text-red-500"
+          className="font-bold text-sm md:text-xl border-white/100 shadow-xl backdrop-blur-xl rounded-2xl p-2 bg-white/30 hover:translate-x-2 transition duration-300 hover:text-[var(--MostUsed-color)] "
         >
           Free Consultation
         </Link>
 
         {/* Mobile Menu Icon */}
-        <FaBars onClick={toggler} className="lg:hidden md:hidden cursor-pointer" />
+        <FaBars
+          onClick={toggler}
+          className="lg:hidden md:hidden cursor-pointer"
+        />
       </div>
 
       {/* Overlay */}
-      {isMobileOpen && <div onClick={toggler} className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"></div>}
+      {isMobileOpen && (
+        <div
+          onClick={toggler}
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+        ></div>
+      )}
 
       {/* Mobile Nav */}
       <div
@@ -162,19 +204,34 @@ const NavBar = () => {
 
           {/* Mobile Services Dropdown */}
           <MobileDropdown title="Services">
-            <Link href="/services/webDesign" className="p-2 hover:bg-red-500 hover:text-white rounded-lg">
+            <Link
+              href="/services/webDesign"
+              className="p-2 hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
+            >
               Web Design
             </Link>
-            <Link href="/services/CustomDev" className="p-2 hover:bg-red-500 hover:text-white rounded-lg">
+            <Link
+              href="/services/CustomDev"
+              className="p-2 hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
+            >
               Custom Website
             </Link>
-            <Link href="/services/WordPress" className="p-2 hover:bg-red-500 hover:text-white rounded-lg">
+            <Link
+              href="/services/WordPress"
+              className="p-2 hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
+            >
               WordPress Website
             </Link>
-            <Link href="/services/graphics" className="p-2 hover:bg-red-500 hover:text-white rounded-lg">
+            <Link
+              href="/services/graphics"
+              className="p-2 hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
+            >
               Graphics Design
             </Link>
-            <Link href="/services/videoEditing" className="p-2 hover:bg-red-500 hover:text-white rounded-lg">
+            <Link
+              href="/services/videoEditing"
+              className="p-2 hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
+            >
               Video Editing
             </Link>
           </MobileDropdown>

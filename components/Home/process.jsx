@@ -13,7 +13,7 @@ const steps = [
     id: 2,
     title: "UI/UX Design",
     description: "We follow the first and foremost priority of gathering requirements, resources, and information to begin our project.",
-    icon: <FaDraftingCompass className="text-red-400 text-4xl mb-4" />,
+    icon: <FaDraftingCompass className="text-[var(--MostUsed-color)] text-4xl mb-4" />,
   },
   {
     id: 3,

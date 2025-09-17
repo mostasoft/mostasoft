@@ -80,3 +80,7 @@
   display: flex;
   animation: slide 20s linear infinite;
 }
+
+:root {
+  --MostUsed-color: red;  /* main brand color (like red-500) */ /* hover color (like black) */
+}

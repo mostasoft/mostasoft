@@ -30,7 +30,7 @@ export default function Hero() {
         speed={1000}
         loop={true}
         centeredSlides={true}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        autoplay={{ delay: 6000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
@@ -49,9 +49,14 @@ export default function Hero() {
                   We provide modern web development, digital marketing, and
                   excellent support to help your business grow online.
                 </p>
-                <button className="px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">
-                  Get Started
+               <div className="flex space-x-3">
+                  <button className="px-6 py-3 rounded-xl bg-[var(--MostUsed-color)] text-white font-semibold hover:bg-purple-700 transition">
+                  Explore More
                 </button>
+                <button className="px-6 py-3 rounded-xl bg-green-500 text-white font-semibold hover:bg-purple-700 transition">
+                  Book A Free Consultation
+                </button>
+                </div>
               </div>
 
               {/* Right: Image */}
@@ -82,9 +87,14 @@ export default function Hero() {
                   We provide modern web development, digital marketing, and
                   excellent support to help your business grow online.
                 </p>
-                <button className="px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">
-                  Get Started
+                <div className="flex space-x-3">
+                  <button className="px-6 py-3 rounded-xl bg-[var(--MostUsed-color)] text-white font-semibold hover:bg-purple-700 transition">
+                  Explore More
                 </button>
+                <button className="px-6 py-3 rounded-xl bg-green-500 text-white font-semibold hover:bg-purple-700 transition">
+                  Book A Free Consultation
+                </button>
+                </div>
               </div>
 
               {/* Right: Image */}
@@ -115,9 +125,16 @@ export default function Hero() {
                   We provide modern web development, digital marketing, and
                   excellent support to help your business grow online.
                 </p>
-                <button className="px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">
-                  Get Started
+               <div className="flex space-x-3">
+                  <button className="px-6 py-3 rounded-xl bg-[var(--MostUsed-color)] text-white font-semibold hover:bg-purple-700 transition">
+                  Explore More
                 </button>
+                <button className="px-6 py-3 rounded-xl bg-green-500 text-white font-semibold hover:bg-purple-700 transition">
+                  Book A Free Consultation
+                </button>
+                </div>
+
+
               </div>
 
               {/* Right: Image */}
