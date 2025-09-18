@@ -7,37 +7,37 @@ const projects = [
     title: "Education Consultancy Platform",
     description: "Business automation for international education consultancies.",
     image: "/Hero.png",
-    url: "/work/detailedCase/project1"
+    url: "/blog/detailedCase/project1"
   },
   {
     title: "WAFIMA – Tour & Travel Website",
     description: "Multilingual tour platform tailored for outbound Chinese travelers.",
     image: "/Hero.png",
-    url: "/work/detailedCase/project2"
+    url: "/blog/detailedCase/project2"
   },
   {
     title: "Classter – Education Tech Platform",
     description: "Modernizing education management with integrated tech solutions.",
     image: "/Hero.png",
-    url: "/work/detailedCase/project3"
+    url: "/blog/detailedCase/project3"
   },
   {
     title: "Cryptomus Payment Gateway",
     description: "Secure crypto payment solutions for modern businesses.",
     image: "/Hero.png",
-    url: "/work/detailedCase/project4"
+    url: "/blog/detailedCase/project4"
   },
   {
     title: "Sharp Archive – eDiscovery Platform",
     description: "Digital legal discovery and archiving made simple.",
     image: "/Hero.png",
-    url: "/work/detailedCase/project5"
+    url: "/blog/detailedCase/project5"
   },
   {
     title: "Nova Overseas – Nova Group",
     description: "Global engineering and contracting firm with international reach.",
     image: "/Hero.png",
-    url: "/work/detailedCase/project6"
+    url: "/blog/detailedCase/project6"
   },
 ];
 
