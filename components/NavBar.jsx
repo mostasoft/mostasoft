@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { AiFillInstagram } from "react-icons/ai";
-import { FaBars, FaLinkedin } from "react-icons/fa";
+import { FaBars, FaLaptopCode, FaLinkedin, FaMicroblog } from "react-icons/fa";
 import { FaSquareFacebook, FaXTwitter } from "react-icons/fa6";
 import { FcAbout } from "react-icons/fc";
 import { IoMdCloseCircle } from "react-icons/io";
@@ -204,7 +204,7 @@ const NavBar = () => {
       >
         <div className="p-6  relative flex flex-col gap-4">
           <Link className="font-bold flex items-center gap-1" href="/"><span><IoHome/></span>Home</Link>
-          <Link className="font-bold flex items-center gap-1" href="#"><span><FcAbout/></span>About</Link>
+
 
           {/* Mobile Services Dropdown */}
           <MobileDropdown  title="Services">
@@ -239,11 +239,14 @@ const NavBar = () => {
               Video Editing
             </Link>
           </MobileDropdown>
+          <Link  className="font-bold flex items-center gap-1" href="/works"><span><FaLaptopCode/></span>Works</Link>
+          <Link  className="font-bold flex items-center gap-1" href="/blog"><span><FaMicroblog/></span>Blog</Link>
+          <Link className="font-bold flex items-center gap-1" href="/about"><span><FcAbout/></span>About</Link>
 
           <Link className="font-bold flex items-center gap-1" href="#"><span><IoCall/></span>Contact</Link>
 
           {/* Close Button */}
-          <div className="btn-glass px-2 py-2 bg-red-300 rounded-full absolute top-0 text-xl right-0 cursor-pointer mt-4 mr-5">
+          <div className="btn-glass px-1 py-1 rounded absolute top-0 text-xl right-0 cursor-pointer mt-4 mr-5">
             <IoMdCloseCircle onClick={toggler} />
           </div>
         </div>
