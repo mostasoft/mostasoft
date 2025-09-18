@@ -161,7 +161,7 @@ const NavBar = () => {
             Works
           </Link>
           <Link
-            href="#"
+            href="/blog"
             className="hover:bg-white/30 hover:text-[var(--MostUsed-color)]  hover:translate-x-2 transition duration-300 rounded-2xl p-2"
           >
             Blog
