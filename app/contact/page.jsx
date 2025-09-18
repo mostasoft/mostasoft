@@ -1,9 +1,14 @@
 import React from 'react'
+import ContactHero from './contactComp/ServiceHero'
+import CTA from './contactComp/CTA'
+import Follow from './contactComp/Follow'
 
 const page = () => {
   return (
     <div>
-      contact page
+      <ContactHero/>
+      <CTA/>
+      <Follow/>
     </div>
   )
 }
