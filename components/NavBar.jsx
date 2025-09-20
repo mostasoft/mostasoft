@@ -11,6 +11,9 @@ import { IoMdCloseCircle } from "react-icons/io";
 import { IoCall, IoHome } from "react-icons/io5";
 import { MdMiscellaneousServices } from "react-icons/md";
 
+
+
+
 const MobileDropdown = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -42,6 +45,7 @@ const NavBar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggler = () => setIsMobileOpen((prev) => !prev);
+  const handleLinkClick = () => setIsMobileOpen(false);
 
   return (
     <div>
@@ -167,6 +171,12 @@ const NavBar = () => {
             Blog
           </Link>
           <Link
+            href="/about"
+            className="hover:bg-white/30 hover:text-[var(--MostUsed-color)]  hover:translate-x-2 transition duration-300 rounded-2xl p-2"
+          >
+            About
+          </Link>
+          <Link
             href="/contact"
             className="hover:bg-white/30 hover:text-[var(--MostUsed-color)] hover:translate-x-2 transition duration-300 rounded-2xl p-2"
           >
@@ -203,47 +213,47 @@ const NavBar = () => {
         ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="p-6  relative flex flex-col gap-4">
-          <Link className="font-bold flex items-center gap-1" href="/"><span><IoHome/></span>Home</Link>
+          <Link onClick={handleLinkClick}  className="font-bold flex items-center gap-1" href="/"><span><IoHome/></span>Home</Link>
 
 
           {/* Mobile Services Dropdown */}
           <MobileDropdown  title="Services">
-            <Link
+            <Link onClick={handleLinkClick}
               href="/services/webDesign"
               className="p-2 font-semibold hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
             >
               Web Design
             </Link>
-            <Link
+            <Link onClick={handleLinkClick}
               href="/services/CustomDev"
               className="p-2 font-semibold hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
             >
               Custom Website
             </Link>
-            <Link
+            <Link onClick={handleLinkClick}
               href="/services/WordPress"
               className="p-2 hover:bg-[var(--MostUsed-color)] hover:text-white font-semibold rounded-lg"
             >
               WordPress Website
             </Link>
-            <Link
+            <Link onClick={handleLinkClick}
               href="/services/graphics"
               className="p-2 font-semibold hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
             >
               Graphics Design
             </Link>
-            <Link
+            <Link onClick={handleLinkClick}
               href="/services/videoEditing"
               className="p-2 font-semibold hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
             >
               Video Editing
             </Link>
           </MobileDropdown>
-          <Link  className="font-bold flex items-center gap-1" href="/works"><span><FaLaptopCode/></span>Works</Link>
-          <Link  className="font-bold flex items-center gap-1" href="/blog"><span><FaMicroblog/></span>Blog</Link>
-          <Link className="font-bold flex items-center gap-1" href="/about"><span><FcAbout/></span>About</Link>
+          <Link onClick={handleLinkClick}  className="font-bold flex items-center gap-1" href="/works"><span><FaLaptopCode/></span>Works</Link>
+          <Link onClick={handleLinkClick} className="font-bold flex items-center gap-1" href="/blog"><span><FaMicroblog/></span>Blog</Link>
+          <Link onClick={handleLinkClick} className="font-bold flex items-center gap-1" href="/about"><span><FcAbout/></span>About</Link>
 
-          <Link className="font-bold flex items-center gap-1" href="#"><span><IoCall/></span>Contact</Link>
+          <Link  onClick={handleLinkClick} className="font-bold flex items-center gap-1" href="/contact"><span><IoCall/></span>Contact</Link>
 
           {/* Close Button */}
           <div className="btn-glass px-1 py-1 rounded absolute top-0 text-xl right-0 cursor-pointer mt-4 mr-5">
