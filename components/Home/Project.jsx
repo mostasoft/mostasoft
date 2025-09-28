@@ -3,34 +3,34 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "Education Consultancy Platform",
+    title: "Car Dealership Website",
     description: "Business automation for international education consultancies.",
-    image: "/Hero.png",
+    image: "/car.png",
   },
   {
-    title: "WAFIMA – Tour & Travel Website",
+    title: "Personal Portfolio Website",
     description: "Multilingual tour platform tailored for outbound Chinese travelers.",
-    image: "/Hero.png",
+    image: "/personal brand.png",
   },
   {
-    title: "Classter – Education Tech Platform",
+    title: "Food Business Website",
     description: "Modernizing education management with integrated tech solutions.",
-    image: "/Hero.png",
+    image: "/foodwebiste.png",
   },
   {
-    title: "Cryptomus Payment Gateway",
+    title: "Blog Website",
     description: "Secure crypto payment solutions for modern businesses.",
-    image: "/Hero.png",
+    image: "/blog.png",
   },
   {
     title: "Sharp Archive – eDiscovery Platform",
     description: "Digital legal discovery and archiving made simple.",
-    image: "/Hero.png",
+    image: "/sharp.png",
   },
   {
-    title: "Nova Overseas – Nova Group",
+    title: "E-Commerce Business for MostaShop",
     description: "Global engineering and contracting firm with international reach.",
-    image: "/Hero.png",
+    image: "/e-commerce.png",
   },
 ];
 

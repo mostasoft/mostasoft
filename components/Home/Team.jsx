@@ -10,22 +10,22 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/f
 
 const teamMembers = [
   {
-    name: "Mary Brown",
+    name: "Mostakin Haque",
     role: "Creative leader",
     description:
       "Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavidr from dolor amet iquam lorem bibendum",
     image: "/CEO2.jpg",
   },
   {
-    name: "Ann Richmond",
-    role: "Creative leader",
+    name: "Akterul Haque",
+    role: "Senior Developer",
     description:
       "Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavidr from dolor amet iquam lorem bibendum",
     image: "/CEO2.jpg",
   },
   {
-    name: "Bob Greenfield",
-    role: "Programming guru",
+    name: "Payel Haque",
+    role: "Content Specialist",
     description:
       "Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavidr from dolor amet iquam lorem bibendum",
     image: "/CEO2.jpg",
