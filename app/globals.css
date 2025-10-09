@@ -84,3 +84,23 @@
 :root {
   --MostUsed-color: #68E868;  /* main brand color (like red-500) */ /* hover color (like black) */
 }
+
+
+@keyframes slow-ping {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-slow-ping {
+  animation: slow-ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-slow-ping-delay {
+  animation: slow-ping 3s cubic-bezier(0, 0, 0.2, 1) infinite 1.5s;
+}

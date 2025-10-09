@@ -1,33 +1,67 @@
-import Image from 'next/image'
-import React from 'react'
+'use client';
 
-const about = () => {
+import React from "react";
+import Image from "next/image";
+
+export default function About() {
+  const features = [
+    { icon: "💻", title: "Custom Software Development", desc: "Tailored solutions to meet your business goals." },
+    { icon: "⚡", title: "High Performance", desc: "Optimized solutions for fast, scalable applications." },
+    { icon: "🌐", title: "Digital Marketing Integration", desc: "Seamlessly grow your audience with smart digital strategies." },
+    { icon: "🛡️", title: "Reliable Support", desc: "24/7 assistance to ensure your software runs smoothly." },
+  ];
+
   return (
-  <div>
-    <div className='text-xl pt-8 pb-8 md:text-2xl bg-gray-100 lg:text-3xl xl:text-4xl font-bold flex items-center justify-center'>About MostaSoft</div>
-    <div>
-      <div className='grid grid-cols-1 bg-gray-100 justify-between lg:grid-cols-2'>
-      <div className='p-6 flex'>
-       <div className='pl-20 '>
-         <Image src="/CEO2.jpg" className='w-50 rounded-xl' width={400} height={400} alt='CEO'/>
-        <div className='font-bold flex items-center justify-center'>Mostakin Haque</div>
-        <div className='flex font-semibold items-center justify-center'>Founder & The CEO</div>
-       </div>
-      </div>
-      <div className=''>
-       <div className='p-4 space-y-4'>
-        <div className='font-bold flex lg:block justify-center md:text-2xl lg:text-3xl'>What Runs In Our DNA</div>
-        <p className='font-semibold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quisquam a provident inventore rerum hic. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero totam earum, maiores porro veritatis sapiente. Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur necessitatibus qui rerum assumenda similique! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, eos. Temporibus, blanditiis?</p>
-        <div className='space-x-4 flex'>
-           <button className="btn-glass hover:translate-x-2 text-[var(--MostUsed-color)]">More About MostaSoft</button>
-           <button className="btn-glass hover:translate-x-2 text-[var(--MostUsed-color)]">Contact The CEO</button>
+    <section className="bg-green-50 py-20 px-6 md:px-12 lg:px-20">
+      {/* Section Title */}
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-green-700 mb-12">
+        About MostaSoft
+      </h2>
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Left Column - Image */}
+        <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-full rounded-2xl shadow-lg overflow-hidden">
+          <Image
+            src="/Hero.png" // Replace with your actual photo path
+            alt="MostaSoft Team"
+            fill
+            className="object-cover"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Right Column - Text */}
+        <div className="space-y-6">
+          <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+            MostaSoft is dedicated to building modern software solutions that empower businesses to grow and succeed.
+            Our team delivers high-quality web applications, innovative digital solutions, and reliable support for every project.
+          </p>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-6">
+            <button className="px-6 py-3 bg-green-600 text-white font-semibold rounded-xl shadow hover:bg-green-700 transition">
+              Explore More
+            </button>
+            <button className="px-6 py-3 bg-white text-green-600 font-semibold rounded-xl shadow border border-green-600 hover:bg-green-50 transition">
+              Contact Us
+            </button>
+          </div>
+
+          {/* Features */}
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {features.map((feature, index) => (
+              <div key={index} className="flex items-start gap-4 p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+                <div className="text-green-600 text-3xl">{feature.icon}</div>
+                <div>
+                  <h3 className="font-semibold text-lg text-gray-900">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm">{feature.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-     </div>
-    </div>
-    </div>
-  </div>
-  )
+    </section>
+  );
 }
-
-export default about

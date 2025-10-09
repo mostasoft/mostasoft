@@ -64,8 +64,13 @@ const reviews = [
 
 export default function ClientReviewSlider() {
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section className="relative py-16 bg-white overflow-hidden">
+      {/* Green decorative blobs */}
+      <div className="absolute -top-24 -left-24 w-72 h-72 bg-green-500/20 rounded-full blur-3xl animate-blob"></div>
+      <div className="absolute -bottom-32 -right-24 w-96 h-96 bg-green-400/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+      <div className="absolute -top-32 -right-32 w-72 h-72 bg-green-300/20 rounded-full blur-3xl animate-blob animation-delay-1000"></div>
+
+      <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
         {/* Heading */}
         <h2 className="text-4xl font-bold mb-12">
           What People Are{" "}
@@ -80,19 +85,19 @@ export default function ClientReviewSlider() {
           loop={true}
           spaceBetween={30}
           breakpoints={{
-            320: { slidesPerView: 1 }, // Mobile
-            640: { slidesPerView: 2 }, // Tablet
-            1024: { slidesPerView: 3 }, // Desktop
+            320: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
           }}
         >
           {reviews.map((client) => (
             <SwiperSlide key={client.id}>
-              <div className="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center h-full">
+              <div className="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center h-full border-2 border-green-500 hover:border-green-600 transition-shadow transition-transform hover:scale-105">
                 {/* Profile Image */}
                 <img
                   src={client.image}
                   alt={client.name}
-                  className="w-20 h-20 rounded-full border-4 border-[var(--MostUsed-color)] mb-4"
+                  className="w-20 h-20 rounded-full border-4 border-green-500 mb-4"
                 />
 
                 {/* Review */}
@@ -103,31 +108,18 @@ export default function ClientReviewSlider() {
                 {/* Name & Role */}
                 <h4 className="font-semibold text-2xl text-gray-800">{client.name}</h4>
                 <p className="text-gray-500 text-xs">{client.role}</p>
+
+                {/* Social Icons */}
                 <div className="flex mt-2 justify-center space-x-2">
-                  <a
-                    href="#"
-                    className="p-2 bg-[var(--MostUsed-color)] text-sm rounded-full hover:bg-black transition"
-                  >
-                    <FaFacebookF />
-                  </a>
-                  <a
-                    href="#"
-                    className="p-2 bg-[var(--MostUsed-color)] text-sm rounded-full hover:bg-black  transition"
-                  >
-                    <FaTwitter />
-                  </a>
-                  <a
-                    href="#"
-                    className="p-2 bg-[var(--MostUsed-color)] text-sm  rounded-full hover:bg-black  transition"
-                  >
-                    <FaInstagram />
-                  </a>
-                  <a
-                    href="#"
-                    className="p-2 bg-[var(--MostUsed-color)] text-sm rounded-full hover:bg-black  transition"
-                  >
-                    <FaLinkedinIn />
-                  </a>
+                  {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, i) => (
+                    <a
+                      key={i}
+                      href="#"
+                      className="p-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition"
+                    >
+                      <Icon />
+                    </a>
+                  ))}
                 </div>
               </div>
             </SwiperSlide>

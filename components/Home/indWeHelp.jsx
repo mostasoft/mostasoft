@@ -1,6 +1,9 @@
 "use client";
 
-import { FaHeartbeat, FaShoppingCart, FaCar, FaGraduationCap, FaBuilding, FaHotel, FaTshirt, FaCapsules, FaPlane, FaLaptopCode, FaMoneyCheckAlt, FaPlus } from "react-icons/fa";
+import { 
+  FaHeartbeat, FaShoppingCart, FaCar, FaGraduationCap, FaBuilding, FaHotel, 
+  FaTshirt, FaCapsules, FaPlane, FaLaptopCode, FaMoneyCheckAlt, FaPlus 
+} from "react-icons/fa";
 
 const industries = [
   { name: "FinTech", icon: <FaMoneyCheckAlt /> },
@@ -19,8 +22,14 @@ const industries = [
 
 export default function IndustrySection() {
   return (
-    <section className="py-16 bg-gray-100">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section className="relative py-16 bg-white overflow-hidden">
+      {/* Decorative Green Blobs */}
+      <div className="absolute -top-32 -left-32 w-80 h-80 bg-green-500/20 rounded-full blur-3xl animate-blob"></div>
+      <div className="absolute -bottom-32 -right-24 w-96 h-96 bg-green-400/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+      <div className="absolute -top-24 -right-40 w-72 h-72 bg-green-300/20 rounded-full blur-3xl animate-blob animation-delay-1000"></div>
+      <div className="absolute -bottom-20 -left-24 w-64 h-64 bg-green-200/20 rounded-full blur-3xl animate-blob animation-delay-1500"></div>
+
+      <div className="relative max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           Industries <span className="text-[var(--MostUsed-color)]">We Serve</span>
         </h2>
@@ -32,7 +41,7 @@ export default function IndustrySection() {
           {industries.map((item, index) => (
             <div 
               key={index}
-              className="flex flex-col items-center hover:-translate-y-3 justify-center p-6 rounded-2xl bg-neutral-100 shadow-xl hover:shadow-2xl transition"
+              className="flex flex-col items-center justify-center p-6 rounded-2xl bg-white shadow-xl hover:shadow-2xl hover:-translate-y-3 transition transform duration-300"
             >
               <div className="text-3xl text-[var(--MostUsed-color)] mb-3">{item.icon}</div>
               <p className="font-medium text-gray-800">{item.name}</p>

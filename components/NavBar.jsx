@@ -166,7 +166,7 @@ const NavBar = () => {
       {isMobileOpen && <div onClick={toggler} className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30"></div>}
 
       {/* Mobile Nav */}
-      <div className={`fixed top-25 left-0 h-full w-3/4 max-w-xs bg-gray-200 shadow-lg z-40 transform transition-transform duration-500 ease-in-out ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}`}>
+      <div className={`fixed top-25  left-0 h-full w-3/4 max-w-xs bg-green-100 shadow-lg z-40 transform transition-transform duration-500 ease-in-out ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}`}>
         {/* Close Icon */}
         <div className="absolute top-2 right-2 z-50">
           <IoMdCloseCircle onClick={toggler} className="text-2xl cursor-pointer" />

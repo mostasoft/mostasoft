@@ -7,28 +7,27 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
-
 const teamMembers = [
   {
     name: "Mostakin Haque",
-    role: "Creative leader",
+    role: "Creative Leader",
     description:
-      "Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavidr from dolor amet iquam lorem bibendum",
-    image: "/CEO2.jpg",
+      "Leading the creative vision with innovative ideas and execution for all digital projects.",
+    image: "/me.jpg",
   },
   {
     name: "Akterul Haque",
     role: "Senior Developer",
     description:
-      "Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavidr from dolor amet iquam lorem bibendum",
-    image: "/CEO2.jpg",
+      "Expert in web development, ensuring clean, scalable, and modern code architecture.",
+    image: "/aktarul.jpg",
   },
   {
     name: "Payel Haque",
     role: "Content Specialist",
     description:
-      "Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavidr from dolor amet iquam lorem bibendum",
-    image: "/CEO2.jpg",
+      "Crafting engaging and SEO-friendly content that drives results for brands.",
+    image: "/payel.jpg",
   },
 ];
 
@@ -38,26 +37,22 @@ export default function MeetTheTeam() {
   const handleMouseEnter = () => {
     const swiper = swiperRef.current;
     if (!swiper) return;
-
-    // Freeze the current translation
-    const currentTranslate = swiper.getTranslate();
-    swiper.setTranslate(currentTranslate);
-
-    // Stop autoplay
     swiper.autoplay.stop();
   };
 
   const handleMouseLeave = () => {
     const swiper = swiperRef.current;
     if (!swiper) return;
-
-    // Resume autoplay
     swiper.autoplay.start();
   };
 
   return (
-    <section className="py-12 px-4 text-center overflow-hidden">
-      <h2 className="text-3xl  font-bold mb-10">Meet The Team</h2>
+    <section className="py-16 px-4 relative overflow-hidden bg-gray-50 text-center">
+      {/* Decorative green blobs */}
+      <div className="absolute -top-32 -left-24 w-72 h-72 bg-green-500/20 rounded-full blur-3xl animate-blob"></div>
+      <div className="absolute -bottom-32 -right-24 w-96 h-96 bg-green-400/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+
+      <h2 className="text-3xl md:text-4xl font-bold mb-10">Meet The Team</h2>
 
       <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <Swiper
@@ -65,13 +60,10 @@ export default function MeetTheTeam() {
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
-          spaceBetween={20}
+          spaceBetween={24}
           slidesPerView={1.2}
           loop={true}
-          autoplay={{
-            delay: 0,
-            disableOnInteraction: false,
-          }}
+          autoplay={{ delay: 0, disableOnInteraction: false }}
           speed={4000}
           breakpoints={{
             640: { slidesPerView: 1.5 },
@@ -82,55 +74,30 @@ export default function MeetTheTeam() {
         >
           {teamMembers.concat(teamMembers).map((member, idx) => (
             <SwiperSlide key={idx}>
-              <div className="bg-white shadow-md rounded-lg w-72 p-6 text-center mx-auto">
-    
+              <div className="bg-white shadow-lg rounded-2xl p-6 mx-auto w-72 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-b-4 border-green-500">
                 <div className="mb-4">
                   <Image
                     src={member.image}
                     alt={member.name}
                     width={150}
                     height={150}
-                    className="rounded-md mx-auto grayscale"
+                    className="rounded-xl mx-auto transition-all duration-500 hover:grayscale-0"
+                    loading="lazy"
                   />
                 </div>
-                <h3 className="text-lg text-black font-bold">{member.name}</h3>
-                <p
-                  className={`text-sm font-medium ${
-                    member.role === "programming guru"
-                      ? "text-[var(--MostUsed-color)]"
-                      : "text-[var(--MostUsed-color)]"
-                  } mb-3`}
-                >
-                  {member.role}
-                </p>
-                <p className="text-sm text-gray-600 mb-4">
-                  {member.description}
-                </p>
-                <div className="flex justify-center space-x-4">
-                  <a
-                    href="#"
-                    className="p-2 text-sm bg-[var(--MostUsed-color)] rounded-full hover:bg-white/30 transition"
-                  >
-                    <FaFacebookF />
-                  </a>
-                  <a
-                    href="#"
-                    className="p-2  text-sm bg-[var(--MostUsed-color)]  rounded-full hover:bg-white/30 transition"
-                  >
-                    <FaTwitter />
-                  </a>
-                  <a
-                    href="#"
-                    className="p-2 text-sm bg-[var(--MostUsed-color)]  rounded-full hover:bg-white/30 transition"
-                  >
-                    <FaInstagram />
-                  </a>
-                  <a
-                    href="#"
-                    className="p-2 text-sm bg-[var(--MostUsed-color)] rounded-full hover:bg-white/30 transition"
-                  >
-                    <FaLinkedinIn />
-                  </a>
+                <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
+                <p className="text-[var(--MostUsed-color)] font-medium mb-2">{member.role}</p>
+                <p className="text-gray-600 text-sm mb-4">{member.description}</p>
+                <div className="flex justify-center space-x-3">
+                  {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, i) => (
+                    <a
+                      key={i}
+                      href="#"
+                      className="p-2 bg-green-500 text-white rounded-full shadow hover:bg-green-600 transition"
+                    >
+                      <Icon />
+                    </a>
+                  ))}
                 </div>
               </div>
             </SwiperSlide>
