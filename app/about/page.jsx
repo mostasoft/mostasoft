@@ -1,9 +1,10 @@
 import React from 'react'
+import AbHero from './aboutComp/AbHero';
 
 const page = () => {
   return (
-    <div>
-      hello
+    <div className='mt-20'>
+      <AbHero/>
     </div>
   )
 }
