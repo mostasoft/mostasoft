@@ -102,7 +102,7 @@ const NavBar = () => {
       >
         
         {/* Logo */}
-        <Link href="#">
+        <Link href="/">
           <div className="flex hover:text-[var(--MostUsed-color)] hover:translate-x-2 transition duration-300 items-center gap-2 font-bold text-sm md:text-2xl">
             <Image src="/Logo.png" width={40} height={40} alt="Logo" />
             MostaSoft
