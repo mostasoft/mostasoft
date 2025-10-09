@@ -2,17 +2,22 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-import { AiFillInstagram } from "react-icons/ai";
-import { FaBars, FaLaptopCode, FaLinkedin, FaMicroblog } from "react-icons/fa";
-import { FaSquareFacebook, FaXTwitter } from "react-icons/fa6";
+import React, { useState, useEffect } from "react";
+import {
+  FaBars,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaMicroblog,
+  FaPhone,
+} from "react-icons/fa";
+import { FaUserGear, FaXTwitter } from "react-icons/fa6";
 import { FcAbout } from "react-icons/fc";
+import { GrServices } from "react-icons/gr";
 import { IoMdCloseCircle } from "react-icons/io";
 import { IoCall, IoHome } from "react-icons/io5";
-import { MdMiscellaneousServices } from "react-icons/md";
-
-
-
+import { MdContactPhone, MdMiscellaneousServices } from "react-icons/md";
+import { CgMail } from "react-icons/cg";
 
 const MobileDropdown = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,21 +26,17 @@ const MobileDropdown = ({ title, children }) => {
     <div className="flex flex-col">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left font-bold rounded-lg  flex justify-between items-center"
+        className="w-full text-left font-bold flex justify-between items-center py-2 px-2 rounded-lg hover:bg-[var(--MostUsed-color)]/10 transition"
       >
-          <Link className="font-bold flex items-center gap-1" href="/"><span><MdMiscellaneousServices/></span>Services</Link>
-       
-        <span
-          className={`transition-transform duration-300 ${
-            isOpen ? "rotate-90" : "rotate-0"
-          }`}
-        >
+        <span className="flex items-center gap-1">
+          <MdMiscellaneousServices />
+          {title}
+        </span>
+        <span className={`transition-transform duration-300 ${isOpen ? "rotate-90" : "rotate-0"}`}>
           ▶
         </span>
       </button>
-      {isOpen && (
-        <div className="flex flex-col pl-4 mt-2 gap-1">{children}</div>
-      )}
+      {isOpen && <div className="flex flex-col pl-6 mt-2 gap-1">{children}</div>}
     </div>
   );
 };
@@ -43,225 +44,155 @@ const MobileDropdown = ({ title, children }) => {
 const NavBar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [hideTopBar, setHideTopBar] = useState(false);
 
   const toggler = () => setIsMobileOpen((prev) => !prev);
   const handleLinkClick = () => setIsMobileOpen(false);
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 50);
+      setHideTopBar(currentScrollY > lastScrollY && currentScrollY > 80 ? true : false);
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div>
-      {/* Top Bar */}
-      <div className="p-2 bg-gray-100 flex justify-between">
-        <div className="hidden md:flex justify-end w-full">
-          You Will Find The Latest News Here
+    <>
+      {/* Top Green Gradient Bar */}
+      <div
+        className={`w-full flex px-5 justify-between h-8 items-center fixed left-0 z-[60] transition-all duration-500 ease-in-out bg-gradient-to-r from-green-400 via-green-500 to-green-600 ${
+          hideTopBar ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100 top-0"
+        }`}
+      >
+        <div className="flex gap-4 items-center">
+          <a href="" className="hidden md:flex items-center text-sm text-white gap-1">
+            <FaPhone /> +8801305009243
+          </a>
+          <a href="" className="flex items-center text-sm text-white gap-1">
+            <CgMail size={18} /> OrganicFood@gamail.com
+          </a>
         </div>
-        <div className="w-full px-8 flex space-x-4 justify-center md:justify-end">
-          <Link
-            href="https://www.linkedin.com/company/mostasoft2/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white hover:text-[var(--MostUsed-color)] hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
-          >
+        <div className="flex gap-4 text-white text-sm">
+          <Link href="https://www.linkedin.com/company/mostasoft2/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </Link>
-          <Link
-            href="https://www.instagram.com/mostasoft"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white hover:text-[var(--MostUsed-color)]  hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
-          >
-            <AiFillInstagram />
+          <Link href="https://www.instagram.com/mostasoft" target="_blank" rel="noopener noreferrer">
+            <FaInstagram />
           </Link>
-          <Link
-            href="https://www.facebook.com/profile.php?id=61577960994285"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white hover:text-[var(--MostUsed-color)] hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
-          >
-            <FaSquareFacebook />
+          <Link href="https://www.facebook.com/profile.php?id=61577960994285" target="_blank" rel="noopener noreferrer">
+            <FaFacebook />
           </Link>
-          <Link
-            href="#"
-            className="bg-white hover:text-[var(--MostUsed-color)]  hover:translate-x-2 transition duration-300 rounded-xl p-2 shadow-3xl"
-          >
-            <FaXTwitter />
-          </Link>
+          <Link href="#"><FaXTwitter /></Link>
         </div>
       </div>
 
-      {/* Main Nav */}
-      <div className="flex justify-between items-center p-7 bg-gray-200 relative">
+      {/* Main Header */}
+      <div
+        className={`fixed left-0 w-full z-[50] flex justify-between items-center px-8 py-4 transition-all duration-500 ease-in-out ${
+          hideTopBar ? "top-0" : "top-8"
+        } ${isScrolled ? "shadow-lg bg-white/60 backdrop-blur-lg" : "bg-green-50"}`}
+      >
+        
         {/* Logo */}
         <Link href="#">
-          <div className="flex hover:translate-x-2 transition duration-300 hover:text-[var(--MostUsed-color)] items-center gap-2 font-bold text-sm md:text-2xl">
+          <div className="flex hover:text-[var(--MostUsed-color)] hover:translate-x-2 transition duration-300 items-center gap-2 font-bold text-sm md:text-2xl">
             <Image src="/Logo.png" width={40} height={40} alt="Logo" />
-            <h1>MostaSoft</h1>
+            MostaSoft
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-9 text-xl font-bold items-center relative">
+        <div className="hidden md:flex space-x-5 text-[18px] font-semibold items-center relative">
           <Link
             href="/"
-            className="hover:bg-white/30 hover:text-[var(--MostUsed-color)] hover:translate-x-2 transition duration-300 rounded-2xl p-2"
+            className="flex items-center gap-1 justify-center text-black hover:text-[var(--MostUsed-color)] hover:translate-x-2 transition duration-300 rounded-2xl p-2"
           >
-            Home
+            <IoHome /> Home
           </Link>
 
           {/* Services Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setIsDropdownOpen(true)}
-            onMouseLeave={() => setIsDropdownOpen(false)}
-          >
-            <button className="hover:bg-white/30 hover:text-[var(--MostUsed-color)] rounded-2xl p-2">
-              Services
+          <div className="relative" onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}>
+            <button className="flex items-center gap-1 justify-center rounded-2xl p-2 hover:text-[var(--MostUsed-color)] transition">
+              <FaUserGear /> Services
             </button>
-
             <div
-              className={`absolute top-full left-0 w-56 rounded-2xl bg-gray-200 shadow-lg z-50 py-2 transition-all duration-500 ease-in-out
-              ${
-                isDropdownOpen
-                  ? "opacity-100 translate-y-0 pointer-events-auto"
-                  : "opacity-0 translate-y-3 pointer-events-none"
+              className={`absolute top-full left-0 w-56 rounded-2xl bg-gray-200 shadow-lg z-50 py-2 transition-all duration-300 ${
+                isDropdownOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-3 pointer-events-none"
               }`}
             >
-              <Link
-                href="/services/webDesign"
-                className="block  px-4 py-2 rounded-2xl hover:text-[var(--MostUsed-color)]"
-              >
-                Web Design
-              </Link>
-              <Link
-                href="/services/CustomDev"
-                className="block px-4 py-2 rounded-2xl hover:text-[var(--MostUsed-color)] "
-              >
-                Custom Website
-              </Link>
-              <Link
-                href="/services/WordPress"
-                className="block px-4 py-2 rounded-2xl hover:text-[var(--MostUsed-color)] "
-              >
-                WordPress Website
-              </Link>
-              <Link
-                href="/services/graphics"
-                className="block px-4 py-2 rounded-2xl hover:text-[var(--MostUsed-color)] "
-              >
-                Graphics Design
-              </Link>
-              <Link
-                href="/services/videoEditing"
-                className="block px-4 py-2 rounded-2xl hover:text-[var(--MostUsed-color)] "
-              >
-                Video Editing
-              </Link>
+              {["Web Design","Custom Website","WordPress Website","Graphics Design","Video Editing"].map((item,i)=>(
+                <Link key={i} href={`/services/${item.replace(/\s+/g,'')}`} className="block px-4 py-2 rounded-2xl hover:text-[var(--MostUsed-color)]">
+                  {item}
+                </Link>
+              ))}
             </div>
           </div>
 
-          <Link
-            href="/works"
-            className="hover:bg-white/30 hover:text-[var(--MostUsed-color)]  hover:translate-x-2 transition duration-300 rounded-2xl p-2"
-          >
-            Works
+          <Link href="/works" className="flex items-center gap-1 hover:text-[var(--MostUsed-color)] transition duration-300 rounded-2xl p-2">
+            <GrServices /> Works
           </Link>
-          <Link
-            href="/blog"
-            className="hover:bg-white/30 hover:text-[var(--MostUsed-color)]  hover:translate-x-2 transition duration-300 rounded-2xl p-2"
-          >
-            Blog
+          <Link href="/blog" className="flex items-center gap-1 hover:text-[var(--MostUsed-color)] transition duration-300 rounded-2xl p-2">
+            <FaMicroblog /> Blog
           </Link>
-          <Link
-            href="/about"
-            className="hover:bg-white/30 hover:text-[var(--MostUsed-color)]  hover:translate-x-2 transition duration-300 rounded-2xl p-2"
-          >
-            About
+          <Link href="/about" className="flex items-center gap-1 hover:text-[var(--MostUsed-color)] transition duration-300 rounded-2xl p-2">
+            <FcAbout /> About
           </Link>
-          <Link
-            href="/contact"
-            className="hover:bg-white/30 hover:text-[var(--MostUsed-color)] hover:translate-x-2 transition duration-300 rounded-2xl p-2"
-          >
-            Contact
+          <Link href="/contact" className="flex items-center gap-1 hover:text-[var(--MostUsed-color)] transition duration-300 rounded-2xl p-2">
+            <MdContactPhone /> Contact
           </Link>
         </div>
 
         {/* CTA Button */}
         <Link
           href="#"
-          className="font-bold text-sm md:text-xl border-white/100 shadow-xl backdrop-blur-xl rounded-2xl p-2 bg-white/30 hover:translate-x-2 transition duration-300 hover:text-[var(--MostUsed-color)] "
+          className="hidden md:flex font-bold text-sm md:text-xl bg-white/30 backdrop-blur-xl shadow-xl rounded-2xl p-2 hover:text-[var(--MostUsed-color)] hover:translate-x-2 transition duration-300"
         >
           Free Consultation
         </Link>
 
         {/* Mobile Menu Icon */}
-        <FaBars
-          onClick={toggler}
-          className="lg:hidden md:hidden cursor-pointer"
-        />
+        <FaBars onClick={toggler} className="lg:hidden md:hidden cursor-pointer" />
       </div>
 
-      {/* Overlay */}
-      {isMobileOpen && (
-        <div
-          onClick={toggler}
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
-        ></div>
-      )}
+      {/* Mobile Overlay */}
+      {isMobileOpen && <div onClick={toggler} className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30"></div>}
 
       {/* Mobile Nav */}
-      <div
-        className={`fixed top-0 left-0 h-full w-1/2 bg-gray-200 shadow-lg z-50 transform transition-transform duration-500 ease-in-out
-        ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}`}
-      >
-        <div className="p-6  relative flex flex-col gap-4">
-          <Link onClick={handleLinkClick}  className="font-bold flex items-center gap-1" href="/"><span><IoHome/></span>Home</Link>
+      <div className={`fixed top-25 left-0 h-full w-3/4 max-w-xs bg-gray-200 shadow-lg z-40 transform transition-transform duration-500 ease-in-out ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}`}>
+        {/* Close Icon */}
+        <div className="absolute top-2 right-2 z-50">
+          <IoMdCloseCircle onClick={toggler} className="text-2xl cursor-pointer" />
+        </div>
 
-
-          {/* Mobile Services Dropdown */}
-          <MobileDropdown  title="Services">
-            <Link onClick={handleLinkClick}
-              href="/services/webDesign"
-              className="p-2 font-semibold hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
-            >
-              Web Design
-            </Link>
-            <Link onClick={handleLinkClick}
-              href="/services/CustomDev"
-              className="p-2 font-semibold hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
-            >
-              Custom Website
-            </Link>
-            <Link onClick={handleLinkClick}
-              href="/services/WordPress"
-              className="p-2 hover:bg-[var(--MostUsed-color)] hover:text-white font-semibold rounded-lg"
-            >
-              WordPress Website
-            </Link>
-            <Link onClick={handleLinkClick}
-              href="/services/graphics"
-              className="p-2 font-semibold hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
-            >
-              Graphics Design
-            </Link>
-            <Link onClick={handleLinkClick}
-              href="/services/videoEditing"
-              className="p-2 font-semibold hover:bg-[var(--MostUsed-color)] hover:text-white rounded-lg"
-            >
-              Video Editing
-            </Link>
+        <div className="px-6 relative flex flex-col gap-4 mt-10">
+          <Link onClick={handleLinkClick} href="/" className="flex items-center gap-1 font-bold p-2 hover:bg-[var(--MostUsed-color)]/20 rounded-lg">
+            <IoHome /> Home
+          </Link>
+          <MobileDropdown title="Services">
+            {["Web Design","Custom Website","WordPress Website","Graphics Design","Video Editing"].map((item,i)=>(
+              <Link key={i} onClick={handleLinkClick} href={`/services/${item.replace(/\s+/g,'')}`} className="p-2 font-semibold hover:bg-[var(--MostUsed-color)]/20 hover:text-white rounded-lg">
+                {item}
+              </Link>
+            ))}
           </MobileDropdown>
-          <Link onClick={handleLinkClick}  className="font-bold flex items-center gap-1" href="/works"><span><FaLaptopCode/></span>Works</Link>
-          <Link onClick={handleLinkClick} className="font-bold flex items-center gap-1" href="/blog"><span><FaMicroblog/></span>Blog</Link>
-          <Link onClick={handleLinkClick} className="font-bold flex items-center gap-1" href="/about"><span><FcAbout/></span>About</Link>
-
-          <Link  onClick={handleLinkClick} className="font-bold flex items-center gap-1" href="/contact"><span><IoCall/></span>Contact</Link>
-
-          {/* Close Button */}
-          <div className="btn-glass px-1 py-1 rounded absolute top-0 text-xl right-0 cursor-pointer mt-4 mr-5">
-            <IoMdCloseCircle onClick={toggler} />
-          </div>
+          <Link onClick={handleLinkClick} href="/works" className="flex items-center gap-1 font-bold p-2 hover:bg-[var(--MostUsed-color)]/20 rounded-lg"><FaUserGear /> Works</Link>
+          <Link onClick={handleLinkClick} href="/blog" className="flex items-center gap-1 font-bold p-2 hover:bg-[var(--MostUsed-color)]/20 rounded-lg"><FaMicroblog /> Blog</Link>
+          <Link onClick={handleLinkClick} href="/about" className="flex items-center gap-1 font-bold p-2 hover:bg-[var(--MostUsed-color)]/20 rounded-lg"><FcAbout /> About</Link>
+          <Link onClick={handleLinkClick} href="/contact" className="flex items-center gap-1 font-bold p-2 hover:bg-[var(--MostUsed-color)]/20 rounded-lg"><IoCall /> Contact</Link>
         </div>
       </div>
-    </div>
+
+      {/* Spacer */}
+      <div className="h-[40px]" />
+    </>
   );
 };
 
