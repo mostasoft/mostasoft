@@ -71,11 +71,11 @@ const NavBar = () => {
   }, []);
 
   const services = [
-    { name: "Web Design", link: "/services/WebDesign" },
+    { name: "Web Design", link: "/services/webDesign" },
     { name: "Custom Website", link: "/services/CustomWebsite" },
     { name: "WordPress Website", link: "/services/WordPressWebsite" },
     { name: "Graphics Design", link: "/services/GraphicsDesign" },
-    { name: "Video Editing", link: "/services/VideoEditing" },
+    { name: "Video Editing", link: "/services/videoEditing" },
   ];
 
   return (
