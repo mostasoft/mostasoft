@@ -5,26 +5,26 @@ import { FaReact, FaNodeJs, FaPython, FaWordpress, FaAws } from "react-icons/fa"
 import { SiMongodb, SiMysql, SiTailwindcss, SiNextdotjs, SiTypescript } from "react-icons/si";
 
 const technologies = [
-  { name: "React", icon: <FaReact size={32} className="text-red-500" /> },
-  { name: "Next.js", icon: <SiNextdotjs size={32} className="text-red-500 dark:text-white" /> },
-  { name: "Node.js", icon: <FaNodeJs size={32} className="text-red-500" /> },
-  { name: "Tailwind CSS", icon: <SiTailwindcss size={32} className="text-red-500" /> },
-  { name: "TypeScript", icon: <SiTypescript size={32} className="text-red-500" /> },
-  { name: "MongoDB", icon: <SiMongodb size={32} className="text-red-500" /> },
-  { name: "MySQL", icon: <SiMysql size={32} className="text-red-500" /> },
-  { name: "Python", icon: <FaPython size={32} className="text-red-500" /> },
-  { name: "WordPress", icon: <FaWordpress size={32} className="text-red-500" /> },
-  { name: "AWS", icon: <FaAws size={32} className="text-red-500" /> },
+  { name: "React", icon: <FaReact size={32} className="text-blue-500" /> },
+  { name: "Next.js", icon: <SiNextdotjs size={32} className="text-blue-500 dark:text-white" /> },
+  { name: "Node.js", icon: <FaNodeJs size={32} className="text-blue-500" /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss size={32} className="text-blue-500" /> },
+  { name: "TypeScript", icon: <SiTypescript size={32} className="text-blue-500" /> },
+  { name: "MongoDB", icon: <SiMongodb size={32} className="text-blue-500" /> },
+  { name: "MySQL", icon: <SiMysql size={32} className="text-blue-500" /> },
+  { name: "Python", icon: <FaPython size={32} className="text-blue-500" /> },
+  { name: "WordPress", icon: <FaWordpress size={32} className="text-blue-500" /> },
+  { name: "AWS", icon: <FaAws size={32} className="text-blue-500" /> },
 ];
 
 export default function Technologies() {
   return (
     <section className="bg-gray-50 py-20 text-center px-4">
       <h3 className="uppercase text-xl font-bold tracking-wide text-gray-500">
-        <span className="text-red-500">Technologies</span> We Love ❤️
+        <span className="text-blue-500">Technologies</span> We Love ❤️
       </h3>
       <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-12">
-        Powering Innovation with <span className="text-red-500">Modern Tech</span>
+        Powering Innovation with <span className="text-blue-500">Modern Tech</span>
       </h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-6xl mx-auto">

@@ -1,120 +1,135 @@
-// app/components/RecentProjects.tsx
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
-const projects = [
+const allProjects = [
+  // Video Editing
   {
-    title: "Car Dealership Website",
-    description:
-      "Business automation for international education consultancies.",
-    image: "/car.png",
-    caseStudy: "#",
-    liveLink: "#",
+    category: "Video Editing",
+    title: "Promo Video for Startup",
+    description: "High-quality promotional video for a tech startup.",
+    image: "/Screenshot 2025-10-08 065805.png",
   },
   {
-    title: "Personal Portfolio Website",
-    description:
-      "Multilingual tour platform tailored for outbound Chinese travelers.",
-    image: "/personal brand.png",
-    caseStudy: "#",
-    liveLink: "#",
+    category: "Video Editing",
+    title: "YouTube Content Editing",
+    description: "Editing YouTube content with cinematic effects.",
+    image: "/Screenshot 2025-10-08 065805.png",
+  },
+
+  // WordPress
+  {
+    category: "WordPress",
+    title: "Corporate Website",
+    description: "Professional WordPress site for a corporate client.",
+    image: "/Screenshot 2025-10-08 065805.png",
   },
   {
-    title: "Food Business Website",
-    description:
-      "Modernizing education management with integrated tech solutions.",
-    image: "/foodwebiste.png",
-    caseStudy: "#",
-    liveLink: "#",
+    category: "WordPress",
+    title: "E-commerce Website",
+    description: "WooCommerce based online store for  based online storretail business.",
+    image: "/Screenshot 2025-10-08 065805.png",
+  },
+
+  // Graphic Design
+  {
+    category: "Graphic Design",
+    title: "Brand Identity Design",
+    description: "Logo, brand colors, brand colors, and assets for a startup.",
+    image: "/Screenshot 2025-10-08 065805.png",
   },
   {
-    title: "Blog Website",
-    description: "Secure crypto payment solutions for modern businesses.",
-    image: "/blog.png",
-    caseStudy: "#",
-    liveLink: "#",
-  },
-  {
-    title: "Sharp Archive – eDiscovery Platform",
-    description: "Digital legal discovery and archiving made simple archiving made simple.",
-    image: "/sharp.png",
-    caseStudy: "#",
-    liveLink: "#",
-  },
-  {
-    title: "E-Commerce Business for MostaShop",
-    description:
-      "Global engineering and contracting firm with international reach.",
-    image: "/e-commerce.png",
-    caseStudy: "#",
-    liveLink: "#",
+    category: "Graphic Design",
+    title: "Social Media Campaign",
+    description: "Engaging graphics for Instagram and Facebook campaigns.",
+    image: "/Screenshot 2025-10-08 065805.png",
   },
 ];
 
-export default function RecentProjects() {
-  return (
-    <section className="relative py-20 bg-white overflow-hidden">
-      {/* Decorative floating blobs */}
-      <div className="absolute -top-32 -left-32 w-80 h-80 bg-green-500/20 rounded-full blur-3xl animate-blob"></div>
-      <div className="absolute -bottom-32 -right-24 w-96 h-96 bg-green-400/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
-      <div className="absolute -top-24 -right-40 w-72 h-72 bg-green-300/20 rounded-full blur-3xl animate-blob animation-delay-1000"></div>
+const categories = ["All", "Video Editing", "WordPress", "Graphic Design"];
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Our Recent Projects
-        </h2>
-        <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
-          We’ve worked on innovative platforms across industries including
-          education, crypto, travel, and business automation.
+export default function RecentProjects() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredProjects = allProjects.filter(
+    (project) =>
+      (selectedCategory === "All" || project.category === selectedCategory) &&
+      project.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <section className="bg-gray-100 py-20 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-3xl font-bold text-gray-800 mb-2">Our Recent Projects</h2>
+        <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+          Explore our projects across Video Editing, WordPress Development, and Graphic Design.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="relative bg-white shadow-md rounded-xl overflow-hidden transition-transform hover:-translate-y-2 hover:shadow-2xl group"
+        {/* Filter Tabs */}
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-5 py-2 rounded-full font-semibold transition ${
+                selectedCategory === cat
+                  ? "bg-blue-500 text-white shadow-lg"
+                  : "bg-white text-gray-700 hover:bg-gray-200"
+              }`}
             >
-              {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-green-400/10 to-green-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl pointer-events-none"></div>
+              {cat}
+            </button>
+          ))}
+        </div>
 
-              <div className="w-full h-48 relative">
+        {/* Live Search */}
+        <div className="mb-12">
+          <input
+            type="text"
+            placeholder="Search projects..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full max-w-md px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          />
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-white  shadow-md rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-transform"
+            >
+              <div className="w-full h-56 relative">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover rounded-t-xl"
+                  className="object-cover"
                 />
               </div>
               <div className="p-6 text-left">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[var(--MostUsed-color)] transition-colors duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">{project.description}</p>
-
-                {/* Buttons */}
-                <div className="flex gap-4 mt-2">
-                  <Link
-                    href={project.caseStudy}
-                    target="_blank"
-                    className="px-4 py-2 rounded-xl bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:from-green-600 hover:to-green-700"
-                  >
-                    Case Study
-                  </Link>
-                  <Link
-                    href={project.liveLink}
-                    target="_blank"
-                    className="px-4 py-2 rounded-xl bg-green-500 text-white font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:bg-green-600"
-                  >
-                    Live Link
-                  </Link>
-                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{project.title}</h3>
+                <p className="text-gray-600 text-sm">{project.description}</p>
+                <span className="inline-block mt-3 px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-500">
+                  {project.category}
+                </span>
               </div>
-
-              {/* Floating decorative dots */}
-              <div className="absolute top-2 left-2 w-3 h-3 bg-green-500 rounded-full animate-slow-ping"></div>
-              <div className="absolute bottom-2 right-3 w-2 h-2 bg-green-400 rounded-full animate-slow-ping-delay"></div>
-            </div>
+              <div className="bg-black mb-0">
+                <Link href='#' className="bg-black w-full text-white">View</Link>
+              </div>
+            </motion.div>
           ))}
+          {filteredProjects.length === 0 && (
+            <p className="text-gray-500 col-span-full mt-4">No projects found.</p>
+          )}
         </div>
       </div>
     </section>

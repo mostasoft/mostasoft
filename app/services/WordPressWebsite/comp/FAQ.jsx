@@ -1,26 +1,36 @@
-// components/FAQ.jsx
+// components/FAQWordPress.jsx
 "use client";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    question: "How is custom software development different from off-the-shelf solutions?",
+    category: "Development & Setup",
+    question: "Can you build a WordPress website from scratch?",
     answer:
-      "Custom software development is tailored to your business needs, while off-the-shelf solutions are generic and designed for mass use. Custom software offers more flexibility, scalability, and long-term efficiency.",
+      "Yes! We create custom WordPress websites tailored to your business needs, including themes, plugins, and functionality from the ground up.",
   },
   {
-    question: "What advantages does custom development offer?",
+    category: "Themes & Plugins",
+    question: "Do you customize themes and plugins?",
     answer:
-      "Custom development ensures unique solutions, better integration, scalability, and alignment with your specific goals.",
+      "Absolutely. We can modify existing themes and plugins or develop custom ones to match your design and functionality requirements.",
   },
   {
-    question: "How can I select the best custom software development company?",
+    category: "SEO & Performance",
+    question: "Will my WordPress site be SEO-friendly and fast?",
     answer:
-      "Check their portfolio, client reviews, technical expertise, and ability to understand your business requirements before choosing.",
+      "Yes. We optimize WordPress websites for SEO, speed, and responsiveness to ensure better rankings and user experience.",
+  },
+  {
+    category: "Maintenance & Support",
+    question: "Do you provide ongoing support and maintenance?",
+    answer:
+      "We offer website maintenance, updates, backups, and security monitoring to keep your WordPress site running smoothly.",
   },
 ];
 
-export default function FAQ() {
+export default function FAQWordPress() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -28,52 +38,61 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-white py-16 px-6 md:px-20">
+    <section className="bg-gray-50 py-16 px-6 md:px-20">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         
         {/* Left Side */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-600">FAQ</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-600">FAQ - WordPress Services</h2>
           <p className="text-gray-600 mt-4">
-            We offer a wide range of software development services: mobile app
-            development, desktop development, enterprise software development,
-            and web development services. For more than 20 years we have
-            accumulated experience in various spheres: banking, finance,
-            healthcare, logistics, education, and many more. Our software
-            development team is ready to provide you with expert advice or
-            assist with the creation of custom solutions for you.
+            From building custom websites to maintaining and optimizing them, our WordPress services cover all your business needs. Check out our frequently asked questions.
           </p>
 
           {/* FAQ Items */}
           <div className="mt-8 space-y-4">
             {faqs.map((faq, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="border rounded-lg p-4 cursor-pointer shadow-sm"
+                className="border rounded-xl p-5 cursor-pointer shadow hover:shadow-lg transition-shadow duration-300 bg-white"
                 onClick={() => toggleFAQ(index)}
+                layout
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-medium text-blue-700">
-                    {faq.question}
-                  </h3>
-                  <span className="text-xl text-blue-500">
+                  <div>
+                    <p className="text-sm text-gray-400 italic">{faq.category}</p>
+                    <h3 className="text-lg md:text-xl font-semibold text-blue-700">
+                      {faq.question}
+                    </h3>
+                  </div>
+                  <span className="text-2xl text-blue-500">
                     {openIndex === index ? "−" : "+"}
                   </span>
                 </div>
-                {openIndex === index && (
-                  <p className="mt-3 text-gray-600">{faq.answer}</p>
-                )}
-              </div>
+
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.p
+                      className="mt-3 text-gray-600"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {faq.answer}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Right Side (Illustration) */}
+        {/* Right Side (Illustration / Screenshot) */}
         <div className="flex justify-center">
           <img
-            src="/Hero.png"
-            alt="FAQ Illustration"
-            className="max-w-sm w-full"
+            src="/wordpress.png"
+            alt="WordPress FAQ Illustration"
+            className="max-w-sm w-full rounded-xl shadow-lg"
           />
         </div>
       </div>

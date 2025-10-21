@@ -3,7 +3,7 @@ import Image from "next/image";
 // components/WhyChooseDatapollex.jsx
 export default function WhyChooseDatapollex() {
   return (
-    <section className="bg-black text-white py-16 px-6 md:px-20">
+    <section className="bg-blue-800 text-white py-16 px-6 md:px-20">
       <div className="grid md:grid-cols-2 gap-10 items-center">
         
         {/* Left Content */}

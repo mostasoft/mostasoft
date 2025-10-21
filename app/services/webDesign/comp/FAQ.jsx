@@ -1,22 +1,31 @@
-// components/FAQ.jsx
 "use client";
 import { useState } from "react";
 
 const faqs = [
   {
-    question: "How is custom software development different from off-the-shelf solutions?",
+    question: "What makes MostaSoft web design different?",
     answer:
-      "Custom software development is tailored to your business needs, while off-the-shelf solutions are generic and designed for mass use. Custom software offers more flexibility, scalability, and long-term efficiency.",
+      "Our web design services are fully customized to your brand and business goals. We focus on responsive design, user experience, and conversion optimization to make your website stand out.",
   },
   {
-    question: "What advantages does custom development offer?",
+    question: "Do you provide responsive and mobile-friendly designs?",
     answer:
-      "Custom development ensures unique solutions, better integration, scalability, and alignment with your specific goals.",
+      "Yes! Every website we create is fully responsive and mobile-friendly, ensuring it looks perfect on all devices.",
   },
   {
-    question: "How can I select the best custom software development company?",
+    question: "Can you redesign an existing website?",
     answer:
-      "Check their portfolio, client reviews, technical expertise, and ability to understand your business requirements before choosing.",
+      "Absolutely. We can revamp your existing website to improve its aesthetics, usability, and performance while keeping your brand identity intact.",
+  },
+  {
+    question: "How long does a web design project typically take?",
+    answer:
+      "The timeline depends on the scope and complexity of the project, but most projects are completed within 4-8 weeks.",
+  },
+  {
+    question: "Do you offer ongoing support after launch?",
+    answer:
+      "Yes, we provide post-launch support and maintenance to ensure your website remains secure, up-to-date, and fully functional.",
   },
 ];
 
@@ -33,15 +42,12 @@ export default function FAQ() {
         
         {/* Left Side */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-600">FAQ</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0071CE]">
+            Frequently Asked Questions
+          </h2>
           <p className="text-gray-600 mt-4">
-            We offer a wide range of software development services: mobile app
-            development, desktop development, enterprise software development,
-            and web development services. For more than 20 years we have
-            accumulated experience in various spheres: banking, finance,
-            healthcare, logistics, education, and many more. Our software
-            development team is ready to provide you with expert advice or
-            assist with the creation of custom solutions for you.
+            We specialize in creating modern, responsive, and high-performing websites. 
+            Here are some common questions about our web design services.
           </p>
 
           {/* FAQ Items */}
@@ -49,19 +55,19 @@ export default function FAQ() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border rounded-lg p-4 cursor-pointer shadow-sm"
+                className="border rounded-lg p-4 cursor-pointer shadow-sm hover:shadow-md transition"
                 onClick={() => toggleFAQ(index)}
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-medium text-blue-700">
+                  <h3 className="text-lg font-medium text-[#0071CE]">
                     {faq.question}
                   </h3>
-                  <span className="text-xl text-blue-500">
+                  <span className="text-xl text-[#00A3FF]">
                     {openIndex === index ? "−" : "+"}
                   </span>
                 </div>
                 {openIndex === index && (
-                  <p className="mt-3 text-gray-600">{faq.answer}</p>
+                  <p className="mt-3 text-gray-700">{faq.answer}</p>
                 )}
               </div>
             ))}
@@ -72,7 +78,7 @@ export default function FAQ() {
         <div className="flex justify-center">
           <img
             src="/Hero.png"
-            alt="FAQ Illustration"
+            alt="Web Design FAQ Illustration"
             className="max-w-sm w-full"
           />
         </div>

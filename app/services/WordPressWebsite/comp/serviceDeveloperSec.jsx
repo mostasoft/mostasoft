@@ -3,16 +3,16 @@
 import React from "react";
 import Image from "next/image";
 
-const DevelopersSection = () => {
+const WordPressSection = () => {
   return (
     <section className="bg-[#111] text-white py-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center px-6">
         
-        {/* Left Side - Single Composite Image */}
+        {/* Left Side - WordPress Example Image */}
         <div className="flex justify-center">
           <Image
-            src="/web-development-team.webp" // 🔹 place your uploaded image in /public/team-section.webp
-            alt="Development Team"
+            src="/wordpress-team.webp" // 🔹 replace with your WordPress image in /public
+            alt="WordPress Development Team"
             width={600}
             height={500}
             className="rounded-lg object-cover"
@@ -21,21 +21,19 @@ const DevelopersSection = () => {
 
         {/* Right Side - Text */}
         <div>
-          <p className="text-red-500 font-semibold uppercase tracking-widest flex items-center gap-2">
-            <span className="w-3 h-3 border border-red-500"></span>
-            Website To Drive Your Business Forward
+          <p className="text-blue-500 font-semibold uppercase tracking-widest flex items-center gap-2">
+            <span className="w-3 h-3 border border-blue-500"></span>
+            Websites That Work On WordPress
           </p>
           <h2 className="text-4xl font-bold mt-4 mb-6 leading-snug">
-            Building Website With <br /> Dedicated Web Developers
+            Custom WordPress Development <br /> For Your Business
           </h2>
           <p className="text-gray-300 leading-relaxed mb-6">
-            Transform your website into a user-friendly platform with our expert website development services. 
-            Our team of dedicated website developers and designers are committed to building seamless digital 
-            solutions that unlock the full potential of your business.
+            Build a scalable, secure, and user-friendly website using WordPress. Our team creates custom themes, 
+            plugins, and full-featured websites tailored to your brand’s requirements.
           </p>
           <p className="text-gray-300 leading-relaxed">
-            From concept to deployment, we guide you through the process, ensuring a future-proof solution. 
-            Elevate your business with our scalable web solutions today.
+            From blogs to e-commerce stores, we help you maximize your online presence with fast, reliable, and visually appealing WordPress sites.
           </p>
         </div>
       </div>
@@ -43,4 +41,4 @@ const DevelopersSection = () => {
   );
 };
 
-export default DevelopersSection;
+export default WordPressSection;

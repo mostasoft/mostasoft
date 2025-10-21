@@ -1,26 +1,36 @@
-// components/FAQ.jsx
+// components/FAQVideoEditing.jsx
 "use client";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    question: "How is custom software development different from off-the-shelf solutions?",
+    category: "Video Editing Basics",
+    question: "What software do you use for video editing?",
     answer:
-      "Custom software development is tailored to your business needs, while off-the-shelf solutions are generic and designed for mass use. Custom software offers more flexibility, scalability, and long-term efficiency.",
+      "We use professional tools like Adobe Premiere Pro, Final Cut Pro, and DaVinci Resolve to deliver high-quality videos tailored to your needs.",
   },
   {
-    question: "What advantages does custom development offer?",
+    category: "Advanced Editing",
+    question: "Can you add visual effects and motion graphics?",
     answer:
-      "Custom development ensures unique solutions, better integration, scalability, and alignment with your specific goals.",
+      "Absolutely! Our team can incorporate VFX, motion graphics, animations, and transitions to make your videos stand out.",
   },
   {
-    question: "How can I select the best custom software development company?",
+    category: "Delivery & Formats",
+    question: "In which formats will I receive the final video?",
     answer:
-      "Check their portfolio, client reviews, technical expertise, and ability to understand your business requirements before choosing.",
+      "We provide videos in MP4, MOV, and other popular formats, optimized for social media, YouTube, or professional presentations.",
+  },
+  {
+    category: "Revisions & Feedback",
+    question: "How many revisions can I request?",
+    answer:
+      "We offer up to 3 rounds of revisions to ensure your vision is perfectly realized. Additional revisions can be arranged if needed.",
   },
 ];
 
-export default function FAQ() {
+export default function FAQVideoEditing() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -28,52 +38,61 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-white py-16 px-6 md:px-20">
+    <section className="bg-gray-50 py-16 px-6 md:px-20">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         
         {/* Left Side */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-600">FAQ</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-purple-600">FAQ - Video Editing Services</h2>
           <p className="text-gray-600 mt-4">
-            We offer a wide range of software development services: mobile app
-            development, desktop development, enterprise software development,
-            and web development services. For more than 20 years we have
-            accumulated experience in various spheres: banking, finance,
-            healthcare, logistics, education, and many more. Our software
-            development team is ready to provide you with expert advice or
-            assist with the creation of custom solutions for you.
+            Whether you need simple editing, advanced motion graphics, or full post-production, our team provides tailored solutions to bring your vision to life. Explore common questions below to learn more.
           </p>
 
           {/* FAQ Items */}
           <div className="mt-8 space-y-4">
             {faqs.map((faq, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="border rounded-lg p-4 cursor-pointer shadow-sm"
+                className="border rounded-xl p-5 cursor-pointer shadow hover:shadow-lg transition-shadow duration-300 bg-white"
                 onClick={() => toggleFAQ(index)}
+                layout
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-medium text-blue-700">
-                    {faq.question}
-                  </h3>
-                  <span className="text-xl text-blue-500">
+                  <div>
+                    <p className="text-sm text-gray-400 italic">{faq.category}</p>
+                    <h3 className="text-lg md:text-xl font-semibold text-purple-700">
+                      {faq.question}
+                    </h3>
+                  </div>
+                  <span className="text-2xl text-purple-500">
                     {openIndex === index ? "−" : "+"}
                   </span>
                 </div>
-                {openIndex === index && (
-                  <p className="mt-3 text-gray-600">{faq.answer}</p>
-                )}
-              </div>
+
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.p
+                      className="mt-3 text-gray-600"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {faq.answer}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Right Side (Illustration) */}
+        {/* Right Side (Illustration / Video Thumbnail) */}
         <div className="flex justify-center">
           <img
-            src="/Hero.png"
-            alt="FAQ Illustration"
-            className="max-w-sm w-full"
+            src="/video-editing.png"
+            alt="Video Editing FAQ Illustration"
+            className="max-w-sm w-full rounded-xl shadow-lg"
           />
         </div>
       </div>

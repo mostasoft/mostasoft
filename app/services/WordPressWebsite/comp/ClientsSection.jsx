@@ -1,64 +1,86 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import "swiper/css";
 
 const clients = [
   { name: "Pexpay", src: "/pexpay.png" },
-  { name: "Pexpay", src: "/pexpay.png" },
-  { name: "Pexpay", src: "/pexpay.png" },
-  { name: "Pexpay", src: "/pexpay.png" },
-  { name: "Pexpay", src: "/pexpay.png" },
-  { name: "Pexpay", src: "/pexpay.png" },
-  // Add more if needed
+  { name: "Ledn", src: "/ledn.png" },
+  { name: "AdaNFT", src: "/adanft.png" },
+  { name: "Rakuten", src: "/rakuten.png" },
 ];
 
-export default function ClientsSection() {
+const Clients = () => {
   return (
-    <section className="w-full bg-[#111] py-10 overflow-hidden">
-      <div className="max-w-7xl mx-auto flex items-center gap-10 px-6">
+    <section className="w-full bg-white py-10 overflow-hidden relative">
+      {/* Decorative background blobs for consistency */}
+      <div className="absolute -top-20 -left-20 w-60 h-60 bg-green-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-green-400/10 rounded-full blur-3xl"></div>
+
+      <div className="max-w-7xl mx-auto flex items-center gap-10 relative z-10">
         {/* Left side "OUR CLIENTS" */}
-        <div className="bg-[#1a1a1a] relative px-6 py-4 text-white font-bold text-lg uppercase tracking-wide skew-x-[-12deg]">
-          <div className="absolute top-0 left-0 w-full h-1 bg-red-500"></div>
+        <div className="bg-gradient-to-r from-green-500 to-green-600 relative px-6 py-4 text-white font-semibold text-lg uppercase tracking-wide skew-x-[-12deg] shadow-lg">
+          <div className="absolute top-0 left-0 w-full h-1 bg-green-300"></div>
           <span className="skew-x-[12deg] flex items-center gap-2">
-            <span className="w-4 h-4 border-2 border-red-500"></span>
+            <span className="w-4 h-4 border-2 border-white rounded-sm"></span>
             Our Clients
           </span>
         </div>
 
-        {/* Swiper Logos */}
+        {/* Animated Logos */}
         <div className="relative flex-1 overflow-hidden">
-          <Swiper
-            modules={[Autoplay]}
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
-            loop={true}
-            spaceBetween={40}
-            breakpoints={{
-              320: { slidesPerView: 2 },
-              640: { slidesPerView: 3 },
-              768: { slidesPerView: 4 },
-              1024: { slidesPerView: 5 },
-            }}
-          >
+          <div className="flex gap-16 animate-slide">
+            {/* First set of logos */}
             {clients.map((client, index) => (
-              <SwiperSlide
+              <div
                 key={index}
-                className="flex items-center justify-center px-4"
+                className="flex items-center justify-center min-w-[150px] grayscale hover:grayscale-0 transition duration-300"
               >
                 <Image
                   src={client.src}
                   alt={client.name}
                   width={150}
                   height={80}
-                  className="object-contain grayscale hover:grayscale-0 transition"
+                  className="object-contain"
                 />
-              </SwiperSlide>
+              </div>
             ))}
-          </Swiper>
+
+            {/* Duplicate set for seamless loop */}
+            {clients.map((client, index) => (
+              <div
+                key={index + 'dup'}
+                className="flex items-center justify-center min-w-[150px] grayscale hover:grayscale-0 transition duration-300"
+              >
+                <Image
+                  src={client.src}
+                  alt={client.name}
+                  width={150}
+                  height={80}
+                  className="object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* Keyframes for smooth infinite slide */}
+      <style jsx>{`
+        @keyframes slide {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-slide {
+          animation: slide 20s linear infinite;
+        }
+      `}</style>
     </section>
   );
-}
+};
+
+export default Clients;

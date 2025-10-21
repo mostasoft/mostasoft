@@ -12,6 +12,7 @@ import WhoWeWorkWith from "./../components/Home/WorkWith";
 import GetQuoteForm from "./../components/Home/CTA";
 import Team from "./../components/Home/Team";
 import TechBehindUs from "./../components/Home/TechBehindUs";
+import FAQAdvanced from './../components/Home/Faqs';
 
 const Page = () => {
   
@@ -29,6 +30,7 @@ const Page = () => {
       <Project />
       <TechBehindUs />
       <WhoWeWorkWith />
+      <FAQAdvanced/>
       <GetQuoteForm />
     </div>
   );
