@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import ScrollToTop from './../components/scriollTop';
 import WhatsAppButton from './../components/whatsapp';
+import RouteProgressBar from './../components/RouteProgressBar';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
          <NavBar/>
+         <RouteProgressBar/>
         {children}
         <ScrollToTop/>
         <WhatsAppButton/>

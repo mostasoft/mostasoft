@@ -104,3 +104,10 @@
 .animate-slow-ping-delay {
   animation: slow-ping 3s cubic-bezier(0, 0, 0.2, 1) infinite 1.5s;
 }
+
+
+#nprogress .bar {
+  background: red !important; /* Blue-500 */
+  height: 5px !important;
+  transition: all 0.1s ease !important;
+}
